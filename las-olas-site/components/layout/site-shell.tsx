@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 type SiteShellProps = {
@@ -15,13 +16,20 @@ const navigation = [
 export function SiteShell({ children }: SiteShellProps) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/70 bg-sand-50/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link href="/" className="flex flex-col leading-tight">
-            <span className="font-display text-sm uppercase tracking-[0.35em] text-teal-900">
-              Las Olas
+      <header className="sticky top-0 z-50 border-b border-white/70 bg-sand-50/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-0">
+          <Link href="/" className="flex items-center gap-3">
+            <span className="relative block h-14 w-44 sm:h-16 sm:w-52">
+              <Image
+                src="/images/las-olas-logo.png"
+                alt="Las Olas"
+                fill
+                sizes="208px"
+                className="object-contain"
+                priority
+              />
             </span>
-            <span className="text-xs text-charcoal/70">
+            <span className="hidden text-xs uppercase tracking-[0.22em] text-charcoal/70 sm:inline">
               Condominiums · Eagle Beach
             </span>
           </Link>
@@ -47,7 +55,7 @@ export function SiteShell({ children }: SiteShellProps) {
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-16 pt-10 lg:pt-16">
+      <main className="flex w-full flex-1 flex-col pb-16">
         {children}
       </main>
 
