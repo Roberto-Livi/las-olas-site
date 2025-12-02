@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Las Olas Condominiums – Eagle Beach",
-  description: "Beachfront condo-hotel at Eagle Beach, Aruba.",
+  title: "Las Olas Condominiums – Eagle Beach, Aruba | Steps from #3 Beach in the World",
+  description: "Beachfront condo-hotel at Eagle Beach, Aruba—2 minutes to Tripadvisor’s #3 beach in the world.",
 };
 
 export default function RootLayout({
