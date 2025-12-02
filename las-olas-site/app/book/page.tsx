@@ -1,31 +1,62 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ResidenceCard } from "@/components/residences/residence-card";
 
 const categories = [
   {
-    title: "1 Bedroom Apartment",
-    copy: "Comfortable one-bedroom with sofa bed, balcony/terrace, and a full kitchen.",
-    image: "/images/residences/one-bedroom-apartment-1.jpg",
+    title: "One Bedroom Apartment",
+    sleeps: "Sleeps 2–4",
+    copy: "Full kitchen, living with sofa bed, balcony/terrace, and a serene bedroom for couples or small families.",
+    highlights: ["Full kitchen", "Balcony/terrace", "Sofa bed"],
+    gallery: [
+      "/images/residences/one-bedroom-apartment-1.jpg",
+      "/images/residences/one-bedroom-apartment-2.jpg",
+      "/images/residences/one-bedroom-apartment-3.jpg",
+    ],
   },
   {
-    title: "1 Bedroom Suite",
-    copy: "Expanded living, elevated finishes, and private balcony for an elevated stay.",
-    image: "/images/residences/one-bedroom-suite-1.jpg",
+    title: "One Bedroom Suite",
+    sleeps: "Sleeps 2–4",
+    copy: "Expanded living area, elevated finishes, fully equipped kitchen, and private balcony for an elevated stay.",
+    highlights: ["Expanded living", "Upgraded finishes", "Private balcony"],
+    gallery: [
+      "/images/residences/one-bedroom-suite-1.jpg",
+      "/images/residences/one-bedroom-suite-2.jpg",
+      "/images/residences/one-bedroom-suite-3.jpg",
+    ],
   },
   {
-    title: "2 Bedroom Apartment",
-    copy: "Two bedrooms, two baths, dining area, and terrace—ideal for families or groups.",
-    image: "/images/residences/two-bedroom-apartment-1.jpg",
+    title: "Two Bedroom Apartment",
+    sleeps: "Sleeps 4–6",
+    copy: "Two bedrooms, two baths, dining area, full kitchen, and terrace—ideal for families or groups.",
+    highlights: ["Two bathrooms", "Dining area", "Balcony/terrace"],
+    gallery: [
+      "/images/residences/two-bedroom-apartment-1.jpg",
+      "/images/residences/two-bedroom-apartment-2.jpg",
+      "/images/residences/two-bedroom-apartment-3.jpg",
+    ],
   },
   {
-    title: "3 Bedroom Apartment",
-    copy: "Generous living/dining, multiple baths, and balcony for larger gatherings.",
-    image: "/images/residences/three-bedroom-apartment-1.jpg",
+    title: "Three Bedroom Apartment",
+    sleeps: "Sleeps 6–8",
+    copy: "Generous living and dining spaces, multiple baths, full kitchen, and balcony for larger gatherings.",
+    highlights: ["Multiple baths", "Generous dining", "Balcony/terrace"],
+    gallery: [
+      "/images/residences/three-bedroom-apartment-1.jpg",
+      "/images/residences/three-bedroom-apartment-2.jpg",
+      "/images/residences/three-bedroom-apartment-3.jpg",
+    ],
   },
   {
-    title: "3 Bedroom Penthouse",
-    copy: "Top-floor views, open layout, private terrace, and refined finishes.",
-    image: "/images/residences/three-bedroom-penthouse-1.jpg",
+    title: "Three Bedroom Penthouse",
+    sleeps: "Sleeps 6–8",
+    copy: "Top-floor views, expansive open layout, upgraded finishes, and a private terrace for elevated privacy.",
+    highlights: ["Top-floor views", "Open layout", "Private terrace"],
+    gallery: [
+      "/images/residences/three-bedroom-penthouse-1.jpg",
+      "/images/residences/three-bedroom-penthouse-2.jpg",
+      "/images/residences/three-bedroom-penthouse-3.jpg",
+    ],
   },
 ];
 
@@ -98,27 +129,17 @@ export default function BookPage() {
           <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">Category highlights</p>
           <h2 className="font-display text-3xl text-charcoal md:text-4xl">Suites &amp; residences</h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((cat) => (
-            <div
+        <div className="grid gap-6 lg:grid-cols-2">
+          {categories.map((cat, index) => (
+            <ResidenceCard
               key={cat.title}
-              className="flex h-full flex-col overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div
-                className="h-40 w-full bg-cover bg-center"
-                style={{
-                  backgroundImage: `linear-gradient(135deg, rgba(15,118,110,0.1), rgba(230,212,189,0.2)), url('${cat.image}')`,
-                }}
-              />
-              <div className="flex flex-1 flex-col space-y-3 p-5">
-                <h3 className="font-display text-xl text-charcoal">{cat.title}</h3>
-                <p className="text-sm leading-relaxed text-charcoal/75">{cat.copy}</p>
-                <div className="flex-1" />
-                <Button asChild variant="outline" className="self-start">
-                  <Link href="/suites">View details</Link>
-                </Button>
-              </div>
-            </div>
+              title={cat.title}
+              sleeps={cat.sleeps}
+              copy={cat.copy}
+              highlights={cat.highlights}
+              gallery={cat.gallery}
+              spanFull={index === categories.length - 1}
+            />
           ))}
         </div>
       </section>

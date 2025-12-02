@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { Button } from "@/components/ui/button";
 import { ResidenceCard } from "@/components/residences/residence-card";
+import { IntroOverlay } from "@/components/intro/intro-overlay";
 
 const highlights = [
   {
@@ -113,6 +114,7 @@ const amenities = [
 export default function Home() {
   return (
     <div className="space-y-24 lg:space-y-32">
+      <IntroOverlay />
       <section className="relative isolate min-h-[90vh] w-full overflow-hidden bg-charcoal text-white">
         <div className="absolute inset-0">
           <div

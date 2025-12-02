@@ -33,7 +33,7 @@ export function SiteShell({ children }: SiteShellProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 border-b border-white/70 bg-sand-50/90 shadow-sm backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 lg:px-0">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 sm:px-6 py-3 lg:px-0">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex flex-col leading-tight">
               <span className="font-display text-2xl tracking-[0.04em] text-teal-900">Las Olas</span>
@@ -43,27 +43,34 @@ export function SiteShell({ children }: SiteShellProps) {
             </div>
           </Link>
 
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-6 text-sm font-medium text-charcoal/80">
+          <nav className="hidden lg:flex flex-1 items-center justify-center gap-5 text-sm font-medium text-charcoal/80">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative pb-2 transition hover:text-teal-900 ${isActive(item.href) ? "text-teal-900" : ""}`}
+                className={`nav-link-glow group relative pb-2 transition hover:text-teal-900 ${
+                  isActive(item.href) ? "text-teal-900" : ""
+                }`}
               >
                 {item.label}
                 <span
-                  className={`pointer-events-none absolute inset-x-0 bottom-0 block h-[2px] transition-opacity duration-200 ${
-                    isActive(item.href) ? "bg-teal-900 opacity-100" : "bg-teal-900/40 opacity-0"
+                  className={`pointer-events-none absolute inset-x-0 bottom-0 block h-[2px] scale-x-0 origin-center transform transition-all duration-300 ease-out ${
+                    isActive(item.href)
+                      ? "bg-teal-900 opacity-100 scale-x-100"
+                      : "bg-teal-900/40 opacity-0 group-hover:opacity-100 group-hover:scale-x-100"
                   }`}
+                />
+                <span
+                  className={`pointer-events-none absolute inset-0 -z-10 rounded-full bg-teal-900/6 opacity-0 blur-lg transition duration-300 group-hover:opacity-100`}
                 />
               </Link>
             ))}
           </nav>
 
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-3 pr-1 sm:pr-2">
             <Button
               asChild
-              className="hidden rounded-full px-5 py-2 shadow-md bg-teal-700 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition md:inline-flex"
+              className="hidden rounded-full px-5 py-2 shadow-md bg-teal-700 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition lg:inline-flex"
             >
               <Link href="/book" className="text-white">
                 Book now
@@ -71,10 +78,11 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand-100 text-charcoal/80 ring-1 ring-sand-200 transition hover:ring-teal-900/40 md:hidden"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-charcoal/80 ring-1 ring-sand-200 shadow-md transition hover:text-teal-900 hover:ring-teal-900/40 hover:-translate-y-0.5 cursor-pointer lg:hidden"
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
+              <span className="text-base">Menu</span>
               <div className="flex h-4 w-5 flex-col justify-between">
                 <span className="block h-[2px] w-full bg-charcoal" />
                 <span className="block h-[2px] w-full bg-charcoal" />
@@ -86,9 +94,9 @@ export function SiteShell({ children }: SiteShellProps) {
       </header>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm md:hidden" onClick={() => setMobileOpen(false)}>
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)}>
           <div
-            className="absolute inset-y-0 right-0 w-4/5 max-w-sm bg-white text-charcoal shadow-2xl"
+            className="absolute inset-y-0 right-0 w-full max-w-sm bg-white text-charcoal shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-sand-200 px-4 py-4">
