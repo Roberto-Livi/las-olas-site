@@ -4,6 +4,17 @@ import { ResidenceCard } from "@/components/residences/residence-card";
 
 const categories = [
   {
+    title: "Studio Apartment",
+    sleeps: "Sleeps 2",
+    copy: "Streamlined studio with full kitchen, seating, and a private balcony or terrace—ideal for solo stays or couples.",
+    highlights: ["Full kitchen", "Balcony/terrace", "Open layout"],
+    gallery: [
+      "/images/residences/studio-apartment-1.jpg",
+      "/images/residences/studio-apartment-2.jpg",
+      "/images/residences/studio-apartment-3.jpg",
+    ],
+  },
+  {
     title: "One Bedroom Apartment",
     sleeps: "Sleeps 2–4",
     copy: "Full kitchen, living with sofa bed, balcony/terrace, and a serene bedroom for couples or small families.",
@@ -138,7 +149,7 @@ export default function BookPage() {
               copy={cat.copy}
               highlights={cat.highlights}
               gallery={cat.gallery}
-              spanFull={index === categories.length - 1}
+              spanFull={index === categories.length - 1 && categories.length % 2 !== 0}
             />
           ))}
         </div>

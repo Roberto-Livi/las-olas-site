@@ -22,6 +22,17 @@ const highlights = [
 
 const suites = [
   {
+    title: "Studio Apartment",
+    sleeps: "Sleeps 2",
+    copy: "Streamlined studio with full kitchen, seating area, and private balcony or terrace—perfect for solo stays or couples.",
+    highlights: ["Full kitchen", "Balcony/terrace", "Open layout"],
+    gallery: [
+      "/images/residences/studio-apartment-1.jpg",
+      "/images/residences/studio-apartment-2.jpg",
+      "/images/residences/studio-apartment-3.jpg",
+    ],
+  },
+  {
     title: "One Bedroom Apartment",
     sleeps: "Sleeps 2–4",
     copy: "Full kitchen, living with sofa bed, balcony/terrace, and a serene bedroom for couples or small families.",
@@ -134,39 +145,54 @@ export default function Home() {
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-charcoal/85" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.07),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(255,255,255,0.1),transparent_30%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/15 to-slate-900/5" />
         </div>
 
-        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-4 py-16 text-center sm:py-20 lg:py-28">
-          <div className="inline-flex items-center gap-3 rounded-full bg-white/12 px-5 py-2 text-xs uppercase tracking-[0.26em] text-white/80 ring-1 ring-white/20 backdrop-blur">
-            <span className="h-px w-10 bg-white/60" />
-            Aruba · Eagle Beach
-            <span className="h-px w-10 bg-white/60" />
-          </div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/14 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white ring-1 ring-white/25 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-sand-100" />
-            Tripadvisor Travelers’ Choice 2025 · #3 beach in the world
-          </div>
-          <div className="max-w-5xl space-y-6">
-            <h1 className="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              Beachfront living, reimagined for the modern traveler.
-            </h1>
-            <p className="mx-auto max-w-4xl text-lg text-white/85">
-              Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—private
-              residences, elevated hospitality, and the Caribbean’s most beloved shoreline at your door.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-white/80">
-            {perks.map((perk) => (
-              <span
-                key={perk.label}
-                className="flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-3 py-2 shadow-sm backdrop-blur"
-              >
+        <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:py-20 lg:py-28">
+          <div className="space-y-5">
+            <div className="flex flex-col items-center gap-2.5">
+              <div className="inline-flex items-center gap-3 rounded-full bg-white/12 px-5 py-2 text-[11px] uppercase tracking-[0.22em] text-white/80 ring-1 ring-white/20 backdrop-blur">
+                <span className="h-px w-8 bg-white/60" />
+                Aruba · Eagle Beach
+                <span className="h-px w-8 bg-white/60" />
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/14 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-white ring-1 ring-white/25 backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-sand-100" />
-                <span className="font-medium text-white">{perk.label}</span>
-                <span className="text-white/70">· {perk.detail}</span>
-              </span>
-            ))}
+                Tripadvisor Travelers’ Choice 2025 · #3 beach in the world
+              </div>
+            </div>
+            <div className="max-w-5xl space-y-4">
+              <h1 className="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
+                Beachfront living, reimagined for the modern traveler.
+              </h1>
+              <p className="mx-auto max-w-4xl text-lg text-white/85">
+                Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—private
+                residences, elevated hospitality, and the Caribbean’s most beloved shoreline at your door.
+              </p>
+            </div>
+            <div className="mx-auto max-w-3xl mt-4">
+              <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/25 bg-white/12 px-4 py-1.5 text-[11px] md:text-xs font-medium uppercase tracking-[0.18em] text-slate-50/90 backdrop-blur shadow-sm">
+                <span>On-site restaurant</span>
+                <span className="opacity-60">•</span>
+                <span>Specialty coffee shop</span>
+                <span className="opacity-60">•</span>
+                <span>Car rental at Las Olas</span>
+              </div>
+            </div>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-sm text-white/80">
+              {perks.map((perk) => (
+                <span
+                  key={perk.label}
+                  className="flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-3 py-2 shadow-sm backdrop-blur"
+                >
+                  <span className="h-2 w-2 rounded-full bg-sand-100" />
+                  <span className="font-medium text-white">{perk.label}</span>
+                  <span className="text-white/70">· {perk.detail}</span>
+                </span>
+              ))}
+            </div>
           </div>
+
           <div className="w-full max-w-3xl">
             <BookingHeroWidget />
           </div>
@@ -342,7 +368,7 @@ export default function Home() {
               copy={suite.copy}
               highlights={suite.highlights}
               gallery={suite.gallery}
-              spanFull={index === suites.length - 1}
+              spanFull={index === suites.length - 1 && suites.length % 2 !== 0}
             />
           ))}
         </div>
