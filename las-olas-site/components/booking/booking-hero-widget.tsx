@@ -9,7 +9,7 @@ export function BookingHeroWidget() {
         mt-2 sm:mt-3 md:mt-5 w-full max-w-4xl mx-auto hero-booking
         rounded-3xl bg-white/10 backdrop-blur-md
         border border-white/18 shadow-md
-        px-4 py-[0.7rem] md:px-6 md:py-[0.9rem]
+        px-4 py-[0.65rem] md:px-6 md:py-[0.85rem]
         flex flex-col md:flex-row items-stretch md:items-center
         gap-2.5 md:gap-4
       "

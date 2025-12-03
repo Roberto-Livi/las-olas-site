@@ -29,9 +29,9 @@ const suites = [
     copy: "Streamlined studio with full kitchen, seating area, and private balcony or terrace—perfect for solo stays or couples.",
     highlights: ["Full kitchen", "Balcony/terrace", "Open layout"],
     gallery: [
-      "/images/residences/studio-apartment-1.jpg",
-      "/images/residences/studio-apartment-2.jpg",
-      "/images/residences/studio-apartment-3.jpg",
+      "/images/residences/studio/studio-apartment-1.jpg",
+      "/images/residences/studio/studio-apartment-2.jpg",
+      "/images/residences/studio/studio-apartment-3.jpg",
     ],
   },
   {
@@ -128,7 +128,7 @@ export default function Home() {
     <div className="space-y-24 lg:space-y-32">
       {/* <IntroOverlay /> */}
       {/* CALM, LUXURY HERO */}
-      <section className="relative isolate min-h-screen w-full overflow-hidden bg-charcoal text-white">
+      <section className="relative isolate min-h-screen w-full bg-charcoal text-white">
         {/* Background media */}
         <div className="absolute inset-0">
           <video
@@ -158,7 +158,7 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
-          <div className="hero-stack flex min-h-[68vh] sm:min-h-[72vh] md:min-h-[75vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-6">
+          <div className="hero-stack flex min-h-[64vh] sm:min-h-[70vh] md:min-h-[75vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -210,7 +210,7 @@ export default function Home() {
 
       <section
         id="eagle-beach"
-        className="relative -mt-20 sm:-mt-24 lg:-mt-28 overflow-hidden bg-gradient-to-r from-sand-50 via-white to-sand-100 scroll-mt-24 sm:scroll-mt-28 py-14 sm:py-16 lg:py-20"
+        className="relative -mt-12 sm:-mt-20 lg:-mt-28 overflow-hidden bg-gradient-to-r from-sand-50 via-white to-sand-100 scroll-mt-24 sm:scroll-mt-28 py-14 sm:py-16 lg:py-20"
       >
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-teal-900/10 blur-3xl" />
