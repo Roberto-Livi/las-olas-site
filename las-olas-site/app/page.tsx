@@ -297,8 +297,109 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ...rest of file unchanged... */}
+      <section
+        id="amenities"
+        className="relative overflow-hidden bg-gradient-to-b from-sand-50 to-white scroll-mt-24 sm:scroll-mt-28"
+      >
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+        <div className="mx-auto max-w-6xl space-y-10 px-4 py-10 sm:px-6 lg:px-0 sm:py-12 lg:py-16">
+          <div className="space-y-3 text-center">
+            <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">On-site Amenities</p>
+            <h2 className="font-display text-3xl text-charcoal md:text-4xl">Everything at Your Doorstep</h2>
+            <p className="mx-auto max-w-3xl text-base text-charcoal/75">
+              Las Olas brings everyday conveniences directly into the building, so you can spend less time planning and
+              more time enjoying Eagle Beach.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {amenities.map((item) => (
+              <div
+                key={item.title}
+                className="group relative overflow-hidden rounded-3xl border border-sand-200 bg-white/90 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="relative h-48 w-full overflow-hidden sm:h-56">
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/20 opacity-60 transition group-hover:opacity-80" />
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, rgba(15,118,110,0.08), rgba(230,212,189,0.15)), url('${item.image ?? "/images/amenities/placeholder.jpg"}')`,
+                    }}
+                  />
+                  <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-charcoal shadow-sm backdrop-blur">
+                    {item.tag}
+                  </div>
+                </div>
+                <div className="space-y-2 p-6">
+                  <h3 className="font-display text-xl text-charcoal">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-charcoal/75">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="residences"
+        className="space-y-10 px-4 sm:px-6 lg:px-0 max-w-6xl mx-auto scroll-mt-24 sm:scroll-mt-28"
+      >
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">
+              Residences
+            </p>
+            <h2 className="font-display text-3xl text-charcoal md:text-4xl">
+              Choose the suite that fits your escape.
+            </h2>
+            <p className="max-w-2xl text-base text-charcoal/75">
+              Five refined categories, each with full kitchens, private outdoor space, and thoughtful finishes. Photos
+              represent typical layouts—colors and configurations may vary.
+            </p>
+          </div>
+          <Button asChild variant="outline">
+            <Link href="/suites">View availability</Link>
+          </Button>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {suites.map((suite, index) => (
+            <ResidenceCard
+              key={suite.title}
+              title={suite.title}
+              sleeps={suite.sleeps}
+              copy={suite.copy}
+              highlights={suite.highlights}
+              gallery={suite.gallery}
+              spanFull={index === suites.length - 1 && suites.length % 2 !== 0}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="relative overflow-hidden bg-gradient-to-b from-white to-sand-50 scroll-mt-24 sm:scroll-mt-28"
+      >
+        <div className="absolute inset-x-0 -top-20 h-40 bg-gradient-to-b from-sand-100/80 to-transparent pointer-events-none" />
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-0 sm:py-14 lg:py-16 space-y-6 text-center">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">Contact</p>
+            <h2 className="font-display text-3xl text-charcoal md:text-4xl">Plan your stay at Las Olas</h2>
+            <p className="mx-auto max-w-2xl text-base text-charcoal/75">
+              Tell us about your dates and preferences. Our team will confirm availability and curate your experience.
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
+            <Button asChild className="rounded-full px-6 py-3 shadow-md">
+              <Link href="/book">Check availability</Link>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full px-6 py-3">
+              <Link href="mailto:info@lasolasaruba.com">Email concierge</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
-// ...existing code...
