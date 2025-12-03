@@ -7,7 +7,7 @@
     line-height: 1.05;
   }
   .hero-booking-wrap {
-    margin-bottom: 1.75rem;
+    margin-bottom: 2.25rem;
     padding-bottom: 0.75rem;
   }
   .hero-booking {
@@ -15,7 +15,7 @@
     padding-bottom: 0.625rem;
   }
   .scroll-indicator {
-    bottom: 14px;
+    bottom: 28px;
   }
 }
 
@@ -30,9 +30,9 @@
     line-height: 1.03;
   }
   .hero-booking-wrap {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.6rem;
   }
   .scroll-indicator {
-    bottom: 12px;
+    bottom: 22px;
   }
 }

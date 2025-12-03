@@ -16,11 +16,11 @@ export function ScrollIndicator() {
 
   return (
     <div
-      className={`scroll-indicator pointer-events-none absolute left-1/2 bottom-1.5 sm:bottom-2.5 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 text-white drop-shadow-2xl z-40 transition-opacity duration-300 ${
+      className={`scroll-indicator pointer-events-none absolute left-1/2 bottom-5 sm:bottom-7 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 text-white drop-shadow-2xl z-40 transition-opacity duration-300 ${
         hidden ? "opacity-0" : "opacity-95"
       }`}
     >
-      <span className="text-[13px] sm:text-sm uppercase tracking-[0.18em] font-semibold px-3.5 py-1.5 rounded-full bg-black/35 backdrop-blur">
+      <span className="text-[13px] sm:text-sm uppercase tracking-[0.18em] font-semibold">
         Scroll to explore
       </span>
       <svg

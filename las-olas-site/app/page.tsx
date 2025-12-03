@@ -199,7 +199,7 @@ export default function Home() {
             </p>
 
             {/* Booking bar centered under features */}
-            <div className="hero-booking-wrap w-full max-w-4xl pb-2 sm:pb-3 mb-7 sm:mb-9">
+            <div className="hero-booking-wrap w-full max-w-4xl pb-3 sm:pb-4 mb-10 sm:mb-12">
               <BookingHeroWidget />
             </div>
           </div>
