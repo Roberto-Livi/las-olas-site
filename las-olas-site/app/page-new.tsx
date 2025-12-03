@@ -154,15 +154,20 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/5 blur-2xl opacity-30 animate-pulse-slower" />
         </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center gap-4 sm:gap-5 px-4 text-center sm:px-6 lg:px-8">
-          <div className="space-y-3 sm:space-y-4 w-full">
+        {/* Main content container with full viewport centering */}
+        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center gap-8 px-4 text-center sm:px-6 lg:px-8">
+          {/* Badge and headline section */}
+          <div className="space-y-5 w-full">
+            {/* Premium location badges with glassmorphism */}
             <div className="flex flex-col items-center gap-3">
+              {/* Location badge */}
               <div className="group inline-flex items-center gap-4 rounded-full bg-white/8 px-7 py-3.5 text-[13px] uppercase tracking-[0.26em] text-white/90 ring-1 ring-white/20 backdrop-blur-xl transition-all duration-500 hover:bg-white/12 hover:ring-white/50 hover:shadow-2xl">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
                 <span className="font-medium">Aruba · Eagle Beach</span>
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
               </div>
 
+              {/* Award badge with animated indicator */}
               <div className="inline-flex items-center gap-3 rounded-full bg-white/12 px-6 py-3.5 text-[13px] font-bold uppercase tracking-[0.2em] text-white ring-1 ring-white/30 backdrop-blur-xl transition-all duration-500 hover:bg-white/16 hover:ring-white/60 hover:shadow-2xl">
                 <span className="relative flex h-3 w-3">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-yellow-300 animate-ping opacity-75"></span>
@@ -172,18 +177,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="max-w-5xl space-y-2 sm:space-y-3">
-              <h1 className="font-display text-3xl leading-tight font-light sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-b from-white via-white to-white/80 text-transparent drop-shadow-2xl">
+            {/* Hero headline with premium typography */}
+            <div className="max-w-7xl space-y-7 pt-6">
+              <h1 className="font-display text-5xl leading-[1.1] font-light sm:text-6xl lg:text-7xl 2xl:text-8xl bg-clip-text bg-gradient-to-b from-white via-white to-white/80 text-transparent drop-shadow-2xl">
                 Beachfront <span className="font-bold tracking-tight">Living</span>,
                 <br className="hidden sm:block" />
                 Reimagined.
               </h1>
-              <p className="mx-auto max-w-5xl text-sm leading-relaxed sm:text-base md:text-lg text-white/95 drop-shadow-2xl font-light tracking-wide">
+
+              {/* Enhanced subheadline with premium spacing */}
+              <p className="mx-auto max-w-5xl text-lg leading-relaxed sm:text-xl lg:text-2xl text-white/95 drop-shadow-2xl font-light tracking-wide">
                 Las Olas is a luxury condo-hotel steps from Eagle Beach. Where architectural calm meets island ease—<span className="font-semibold">luxury residences</span>, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
               </p>
             </div>
-            <div className="pt-2 sm:pt-3">
-              <div className="group inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 rounded-full border border-white/25 bg-white/8 px-5 py-2.5 sm:px-7 sm:py-3 text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-white/98 backdrop-blur-xl transition-all duration-500 hover:bg-white/12 hover:border-white/50 hover:shadow-2xl shadow-lg">
+
+            {/* Modern features ribbon with gradient dots */}
+            <div className="pt-6">
+              <div className="group inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/25 bg-white/8 px-7 py-4 text-xs md:text-sm font-semibold uppercase tracking-[0.16em] text-white/98 backdrop-blur-xl transition-all duration-500 hover:bg-white/12 hover:border-white/50 hover:shadow-2xl shadow-lg">
                 <span className="flex items-center gap-2.5">
                   <span className="h-2 w-2 rounded-full bg-gradient-to-r from-teal-300 to-cyan-300 shadow-lg"></span>
                   On-site Restaurant
@@ -200,31 +210,40 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-              {perks.map((perk, index) => (
-                <div
-                  key={perk.label}
-                  className="group relative inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/7 px-5 py-3 text-white/95 backdrop-blur-xl transition-all duration-500 hover:bg-white/14 hover:border-white/40 hover:-translate-y-1 hover:shadow-2xl shadow-lg"
-                >
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                      index === 0 ? 'bg-teal-400' : index === 1 ? 'bg-amber-400' : 'bg-cyan-400'
-                    }`}></span>
-                    <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${
-                      index === 0 ? 'bg-teal-500' : index === 1 ? 'bg-amber-500' : 'bg-cyan-500'
-                    } shadow-lg`}></span>
-                  </span>
-                  <span className="font-bold">{perk.label}</span>
-                  <span className="text-white/60 text-xs font-medium">· {perk.detail}</span>
-                </div>
-              ))}
+
+            {/* Animated perks pills */}
+            <div className="pt-4 flex flex-wrap items-center justify-center gap-3">
+              {perks.map((perk, index) => {
+                const colors = ['teal', 'amber', 'cyan'];
+                const bgColor = colors[index];
+                return (
+                  <div
+                    key={perk.label}
+                    className="group relative inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/7 px-5 py-3 text-white/95 backdrop-blur-xl transition-all duration-500 hover:bg-white/14 hover:border-white/40 hover:-translate-y-1 hover:shadow-2xl shadow-lg"
+                  >
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
+                        index === 0 ? 'bg-teal-400' : index === 1 ? 'bg-amber-400' : 'bg-cyan-400'
+                      }`}></span>
+                      <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${
+                        index === 0 ? 'bg-teal-500' : index === 1 ? 'bg-amber-500' : 'bg-cyan-500'
+                      } shadow-lg`}></span>
+                    </span>
+                    <span className="font-bold">{perk.label}</span>
+                    <span className="text-white/60 text-xs font-medium">· {perk.detail}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="w-full max-w-md sm:max-w-xl py-4">
+          {/* Premium CTA booking widget with glow effect */}
+          <div className="w-full max-w-2xl pt-8">
             <div className="relative group">
+              {/* Animated glow background */}
               <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/40 via-cyan-500/30 to-orange-500/25 rounded-4xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
               
+              {/* Booking widget container */}
               <div className="relative bg-white/8 backdrop-blur-2xl rounded-3xl border border-white/20 p-0.5">
                 <div className="bg-charcoal/40 rounded-3xl">
                   <BookingHeroWidget />
@@ -233,9 +252,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 sm:gap-2 text-white/60 text-xs">
-            <span className="text-[10px] uppercase tracking-[0.18em] font-bold">Scroll to explore</span>
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {/* Interactive scroll indicator */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/70 text-sm group cursor-pointer">
+            <span className="text-xs uppercase tracking-[0.2em] font-bold group-hover:text-white transition-colors">Scroll to explore</span>
+            <svg className="w-6 h-6 animate-bounce group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
@@ -257,10 +277,10 @@ export default function Home() {
               Eagle Beach · #3 in the World
             </div>
             <h2 className="font-display text-3xl leading-tight text-charcoal sm:text-4xl">
-              Two minutes to Tripadvisor’s Best of the Best shoreline.
+              Two minutes to Tripadvisor's Best of the Best shoreline.
             </h2>
             <p className="max-w-3xl text-base text-charcoal/75">
-              Tripadvisor Travelers’ Choice Best of the Best 2025 ranked Eagle Beach #3 worldwide and #1 in the
+              Tripadvisor Travelers' Choice Best of the Best 2025 ranked Eagle Beach #3 worldwide and #1 in the
               Caribbean. Powder-soft sand, calm turquoise water, and iconic fofoti trees frame your stay—just steps from
               your residence.
             </p>
@@ -270,7 +290,7 @@ export default function Home() {
                 <p className="text-charcoal/70">#3 Beach in the World</p>
               </div>
               <div className="rounded-2xl border border-sand-200 bg-white/90 p-4 text-sm font-semibold text-charcoal shadow-sm backdrop-blur">
-                <p>Caribbean’s Best</p>
+                <p>Caribbean's Best</p>
                 <p className="text-charcoal/70">Visitaruba ranking</p>
               </div>
               <div className="rounded-2xl border border-sand-200 bg-white/90 p-4 text-sm font-semibold text-charcoal shadow-sm backdrop-blur">
@@ -279,7 +299,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-1 text-sm text-charcoal/70">
-              <span>Ranked by Tripadvisor Travelers’ Choice Best of the Best 2025.</span>
+              <span>Ranked by Tripadvisor Travelers' Choice Best of the Best 2025.</span>
               <Link
                 href="https://www.tripadvisor.com/TravelersChoice-Beaches"
                 target="_blank"
@@ -424,10 +444,10 @@ export default function Home() {
               Eagle Beach in your backyard
             </p>
             <h2 className="font-display text-3xl text-charcoal md:text-4xl">
-              Two-minute walk to Aruba’s calmest stretch of sand.
+              Two-minute walk to Aruba's calmest stretch of sand.
             </h2>
             <p className="text-base text-charcoal/75">
-              Las Olas sits steps from Eagle Beach—arrive, drop your bags, and you’re toes-in-sand in under two minutes.
+              Las Olas sits steps from Eagle Beach—arrive, drop your bags, and you're toes-in-sand in under two minutes.
               Concierge can set chairs and umbrellas so you just stroll over.
             </p>
             <div className="rounded-2xl border border-sand-200 bg-white/90 p-5 shadow-sm backdrop-blur">
@@ -464,7 +484,7 @@ export default function Home() {
                 Book direct for the best residences and arrival perks.
               </h2>
               <p className="max-w-2xl text-base text-white/80">
-                Choose your dates, secure your favorite layout, and we’ll prepare your residence with a pre-arrival
+                Choose your dates, secure your favorite layout, and we'll prepare your residence with a pre-arrival
                 concierge touch.
               </p>
             </div>
@@ -486,7 +506,7 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">Stay in touch</p>
           <h2 className="font-display text-3xl text-charcoal md:text-4xl">Plan your stay with our team.</h2>
           <p className="max-w-2xl text-base text-charcoal/75">
-            Share your questions or trip vision—we’ll pair you with the right residence and arrange arrivals, beach setups,
+            Share your questions or trip vision—we'll pair you with the right residence and arrange arrivals, beach setups,
             and island activities.
           </p>
         </div>
@@ -526,7 +546,7 @@ export default function Home() {
             />
           </label>
           <div className="md:col-span-2 flex items-center justify-between text-sm text-charcoal/60">
-            <span>We’ll reply from legacyaua@gmail.com</span>
+            <span>We'll reply from legacyaua@gmail.com</span>
             <Button type="submit" className="px-6">
               Send message
             </Button>
