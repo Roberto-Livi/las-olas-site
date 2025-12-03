@@ -125,7 +125,7 @@ const amenities = [
 export default function Home() {
   return (
     <div className="space-y-24 lg:space-y-32">
-      <IntroOverlay />
+    {/* <IntroOverlay /> */}
       {/* ULTRA-MODERN HERO SECTION */}
       <section className="relative isolate min-h-screen w-full overflow-hidden bg-charcoal text-white">
         {/* Dynamic multi-layer background system */}

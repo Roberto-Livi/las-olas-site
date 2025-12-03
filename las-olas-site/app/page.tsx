@@ -125,7 +125,7 @@ const amenities = [
 export default function Home() {
   return (
     <div className="space-y-24 lg:space-y-32">
-      <IntroOverlay />
+      {/* <IntroOverlay /> */}
       {/* ULTRA-MODERN HERO SECTION */}
       <section className="relative isolate min-h-screen w-full overflow-hidden bg-charcoal text-white">
         {/* Dynamic multi-layer background system */}
@@ -154,7 +154,10 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/5 blur-2xl opacity-30 animate-pulse-slower" />
         </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center gap-4 sm:gap-5 px-4 text-center sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20">
+
+
+
+        <div className="relative mx-auto flex min-h-[75vh] max-w-5xl flex-col items-center justify-center gap-3 sm:gap-4 px-4 text-center sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-10">
           <div className="space-y-3 sm:space-y-4 w-full">
             <div className="flex flex-col items-center gap-4">
               <div className="group inline-flex items-center gap-4 rounded-full bg-white/8 px-7 py-3.5 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/20 backdrop-blur-xl transition-all duration-500 hover:bg-white/12 hover:ring-white/50 hover:shadow-2xl">
@@ -221,14 +224,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full max-w-md sm:max-w-xl py-4">
-            <div className="relative group">
+          <div className="w-full max-w-xs sm:max-w-lg py-2 sm:py-3 mb-16 sm:mb-20">
+            <div className="relative group z-10">
               <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/35 via-cyan-500/25 to-orange-500/20 rounded-4xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
               <BookingHeroWidget />
             </div>
           </div>
-
-          <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-white/90 text-xs drop-shadow-2xl mt-4">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 text-white/90 text-xs drop-shadow-2xl z-40 pointer-events-none">
             <span className="text-[10px] uppercase tracking-[0.18em] font-bold px-3 py-1 rounded-full bg-black/25 backdrop-blur">
               Scroll to explore
             </span>
