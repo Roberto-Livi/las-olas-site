@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { SiteShell } from "@/components/layout/site-shell";
+import { LoadingOverlay } from "@/components/ui/loading-overlay";
 import "./globals.css";
 
 const inter = Inter({
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} bg-sand-50 text-charcoal antialiased`}
       >
+        <LoadingOverlay />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
