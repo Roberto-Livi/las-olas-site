@@ -33,7 +33,7 @@ export function SiteShell({ children }: SiteShellProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 border-b border-white/70 bg-sand-50/90 shadow-sm backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 sm:px-6 py-4 lg:px-0">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 sm:px-6 py-6 lg:px-0">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex flex-col leading-tight">
               <span className="font-display text-2xl tracking-[0.04em] text-teal-900">Las Olas</span>

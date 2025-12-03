@@ -24,7 +24,7 @@ export function ScrollIndicator() {
         Scroll to explore
       </span>
       <svg
-        className="w-5 h-5 sm:w-6 sm:h-6 text-white/90 animate-[bounce_2.6s_cubic-bezier(0.33,0.05,0.2,0.99)_infinite] drop-shadow"
+        className="w-5 h-5 sm:w-6 sm:h-6 text-white/90 animate-[bounce_3.8s_cubic-bezier(0.25,0.08,0.12,1)_infinite] drop-shadow"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
