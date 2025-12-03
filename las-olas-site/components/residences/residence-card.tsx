@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -22,11 +23,30 @@ export function ResidenceCard({
   spanFull = false,
 }: ResidenceCardProps) {
   const [index, setIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
   const images = gallery.length ? gallery : ["/images/residences/placeholder.jpg"];
   const current = images[index % images.length];
 
-  const next = () => setIndex((prev) => (prev + 1) % images.length);
-  const prev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
+  const next = () => {
+    setLoading(true);
+    setImgLoaded(false);
+    setIndex((prev) => {
+      const nextIndex = (prev + 1) % images.length;
+      setAnimKey((k) => k + 1);
+      return nextIndex;
+    });
+  };
+  const prev = () => {
+    setLoading(true);
+    setImgLoaded(false);
+    setIndex((prev) => {
+      const nextIndex = (prev - 1 + images.length) % images.length;
+      setAnimKey((k) => k + 1);
+      return nextIndex;
+    });
+  };
 
   return (
     <div
@@ -35,13 +55,38 @@ export function ResidenceCard({
       }`}
     >
       <div className={`relative w-full ${spanFull ? "h-80" : "h-72"} overflow-hidden`}>
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `linear-gradient(135deg, rgba(15,118,110,0.12), rgba(230,212,189,0.22)), url('${current}')`,
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            key={`${current}-${animKey}`}
+            src={current}
+            alt={`${title} photo ${index + 1}`}
+            fill
+            className={`object-cover transition-all duration-800 ease-[cubic-bezier(0.18,0.6,0.32,1.0)] ${
+              imgLoaded ? "opacity-100 scale-[1.01]" : "opacity-0 scale-[1.04]"
+            }`}
+            onLoadingComplete={() => {
+              setLoading(false);
+              setImgLoaded(true);
+            }}
+            onLoad={() => {
+              setLoading(false);
+              setImgLoaded(true);
+            }}
+            onError={() => {
+              setLoading(false);
+              setImgLoaded(true);
+            }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+            priority={index === 0}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/12 via-transparent to-amber-300/10 mix-blend-multiply" />
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(15,118,110,0.22),transparent_38%),radial-gradient(circle_at_80%_10%,rgba(230,212,189,0.45),transparent_35%)]" />
+        {loading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-[2px]">
+            <div className="h-10 w-10 rounded-full border border-white/25 border-t-white/80 animate-spin-slow shadow-lg shadow-white/20" />
+          </div>
+        )}
         <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-charcoal shadow-sm backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-teal-700" />
           {sleeps}
