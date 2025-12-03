@@ -6,12 +6,12 @@ export function BookingHeroWidget() {
   return (
     <div
       className="
-        mt-10 w-full max-w-4xl mx-auto
+        mt-4 sm:mt-5 md:mt-7 w-full max-w-4xl mx-auto
         rounded-3xl bg-white/10 backdrop-blur-md
-        border border-white/25 shadow-xl
-        px-6 py-4 md:px-8 md:py-5
+        border border-white/18 shadow-md
+        px-4 py-3 md:px-6 md:py-3.5
         flex flex-col md:flex-row items-stretch md:items-center
-        gap-4 md:gap-6
+        gap-3 md:gap-4.5
       "
     >
       <div

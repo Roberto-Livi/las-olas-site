@@ -5,6 +5,7 @@ import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { Button } from "@/components/ui/button";
 import { ResidenceCard } from "@/components/residences/residence-card";
 import { IntroOverlay } from "@/components/intro/intro-overlay";
+import { ScrollIndicator } from "@/components/hero/scroll-indicator";
 
 const highlights = [
   {
@@ -148,6 +149,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-charcoal/85" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(100,220,220,0.06),transparent_45%),radial-gradient(circle_at_75%_5%,rgba(255,255,255,0.06),transparent_40%)] mix-blend-overlay" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/25 via-slate-900/5 to-slate-900/40" />
+          <div className="absolute inset-0 bg-black/18 mix-blend-multiply" />
 
           {/* Gentle orbs */}
           <div className="absolute top-10 -left-40 h-96 w-96 rounded-full bg-gradient-to-r from-teal-500/18 to-cyan-500/12 blur-3xl opacity-40 animate-pulse-slower" />
@@ -155,8 +157,8 @@ export default function Home() {
         </div>
 
         {/* Main text container above overlay */}
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 lg:pt-12 pb-12 sm:pb-14">
-          <div className="flex min-h-[80vh] flex-col items-center justify-center text-center gap-5 sm:gap-6 lg:gap-6">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-9 sm:pb-11">
+          <div className="flex min-h-[72vh] sm:min-h-[76vh] md:min-h-[78vh] flex-col items-center justify-center text-center gap-5 sm:gap-6 md:gap-7">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -172,8 +174,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white">
+            <div className="space-y-4 sm:space-y-5">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white">
                 Beachfront living, reimagined for the modern traveler.
               </h1>
 
@@ -182,15 +184,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Single subtle amenities pill row */}
-            <div className="mt-2">
-              <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full bg-white/12 px-4 py-1.5 backdrop-blur-sm border border-white/25 shadow-sm text-[11px] md:text-xs tracking-[0.18em] font-medium text-slate-50/90 uppercase">
-                ON-SITE RESTAURANT · SPECIALTY COFFEE SHOP · CAR RENTAL AT LAS OLAS
-              </div>
-            </div>
-
             {/* Feature pills row */}
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-4 sm:mt-5 mb-3 sm:mb-4 flex flex-wrap items-center justify-center gap-3">
               {perks.map((perk) => (
                 <span
                   key={perk.label}
@@ -204,19 +199,12 @@ export default function Home() {
             </div>
 
             {/* Booking bar centered under features */}
-            <div className="w-full max-w-4xl pb-4 sm:pb-5 mb-2 sm:mb-3">
+            <div className="w-full max-w-4xl pb-4 sm:pb-5 mb-5 sm:mb-6">
               <BookingHeroWidget />
             </div>
           </div>
 
-          <div className="pointer-events-none absolute left-1/2 bottom-2 sm:bottom-3 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 text-white/90 text-xs drop-shadow-2xl z-40">
-            <span className="text-[10px] uppercase tracking-[0.18em] font-bold px-3 py-1 rounded-full bg-black/35 backdrop-blur">
-              Scroll to explore
-            </span>
-            <svg className="w-5 h-5 sm:w-6 sm:h-6 animate-bounce drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5v14m0 0-5-5m5 5 5-5" />
-            </svg>
-          </div>
+          <ScrollIndicator />
         </div>
       </section>
 
