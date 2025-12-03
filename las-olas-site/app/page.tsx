@@ -154,10 +154,10 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/3 h-64 w-64 rounded-full bg-gradient-to-r from-cyan-500/10 to-teal-500/5 blur-2xl opacity-30 animate-pulse-slower" />
         </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center gap-4 sm:gap-5 px-4 text-center sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center gap-4 sm:gap-5 px-4 text-center sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20">
           <div className="space-y-3 sm:space-y-4 w-full">
-            <div className="flex flex-col items-center gap-3">
-              <div className="group inline-flex items-center gap-4 rounded-full bg-white/8 px-7 py-3.5 text-[13px] uppercase tracking-[0.26em] text-white/90 ring-1 ring-white/20 backdrop-blur-xl transition-all duration-500 hover:bg-white/12 hover:ring-white/50 hover:shadow-2xl">
+            <div className="flex flex-col items-center gap-4">
+              <div className="group inline-flex items-center gap-4 rounded-full bg-white/8 px-7 py-3.5 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/20 backdrop-blur-xl transition-all duration-500 hover:bg-white/12 hover:ring-white/50 hover:shadow-2xl">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
                 <span className="font-medium">Aruba · Eagle Beach</span>
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -223,20 +223,17 @@ export default function Home() {
 
           <div className="w-full max-w-md sm:max-w-xl py-4">
             <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/40 via-cyan-500/30 to-orange-500/25 rounded-4xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative bg-white/8 backdrop-blur-2xl rounded-3xl border border-white/20 p-0.5">
-                <div className="bg-charcoal/40 rounded-3xl">
-                  <BookingHeroWidget />
-                </div>
-              </div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-teal-500/35 via-cyan-500/25 to-orange-500/20 rounded-4xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              <BookingHeroWidget />
             </div>
           </div>
 
-          <div className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 sm:gap-2 text-white/60 text-xs">
-            <span className="text-[10px] uppercase tracking-[0.18em] font-bold">Scroll to explore</span>
-            <svg className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-white/90 text-xs drop-shadow-2xl mt-4">
+            <span className="text-[10px] uppercase tracking-[0.18em] font-bold px-3 py-1 rounded-full bg-black/25 backdrop-blur">
+              Scroll to explore
+            </span>
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 animate-bounce drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 5v14m0 0-5-5m5 5 5-5" />
             </svg>
           </div>
         </div>
