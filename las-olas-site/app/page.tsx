@@ -170,7 +170,7 @@ export default function Home() {
                 <span className="relative flex h-3 w-3">
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-300 shadow-sm" />
                 </span>
-                <span>Travelers' Choice 2025 · #3 Beach Worldwide</span>
+                <span>Tripadvisor Travelers' Choice 2025 · #3 Beach Worldwide</span>
               </div>
             </div>
 

@@ -70,9 +70,9 @@ export function SiteShell({ children }: SiteShellProps) {
           <div className="ml-auto flex items-center gap-3 pr-1 sm:pr-2">
             <Button
               asChild
-              className="hidden rounded-full px-5 py-2 shadow-md bg-teal-700 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition lg:inline-flex"
+              className="hidden rounded-full px-5 py-2 shadow-md bg-teal-700 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition lg:inline-flex [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold"
             >
-              <Link href="/book" className="text-white">
+              <Link href="/book" className="text-white !text-white hover:!text-white">
                 Book now
               </Link>
             </Button>
