@@ -6,10 +6,10 @@ export function BookingHeroWidget() {
   return (
     <div
       className="
-        mt-2 sm:mt-3 md:mt-5 w-full max-w-4xl mx-auto
+        mt-2 sm:mt-3 md:mt-5 w-full max-w-4xl mx-auto hero-booking
         rounded-3xl bg-white/10 backdrop-blur-md
         border border-white/18 shadow-md
-        px-4 py-2 md:px-6 md:py-2.5
+        px-4 py-[0.7rem] md:px-6 md:py-[0.9rem]
         flex flex-col md:flex-row items-stretch md:items-center
         gap-2.5 md:gap-4
       "

@@ -1,0 +1,38 @@
+@media (max-height: 820px) {
+  .hero-stack {
+    gap: 1.25rem;
+    min-height: 72vh;
+  }
+  .hero-headline {
+    line-height: 1.05;
+  }
+  .hero-booking-wrap {
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .hero-booking {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+  .scroll-indicator {
+    bottom: 14px;
+  }
+}
+
+@media (max-height: 740px) {
+  .hero-stack {
+    gap: 1rem;
+    min-height: 70vh;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .hero-headline {
+    line-height: 1.03;
+  }
+  .hero-booking-wrap {
+    margin-bottom: 1.25rem;
+  }
+  .scroll-indicator {
+    bottom: 12px;
+  }
+}

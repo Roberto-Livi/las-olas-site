@@ -16,7 +16,7 @@ export function ScrollIndicator() {
 
   return (
     <div
-      className={`pointer-events-none absolute left-1/2 bottom-1.5 sm:bottom-2.5 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 text-white drop-shadow-2xl z-40 transition-opacity duration-300 ${
+      className={`scroll-indicator pointer-events-none absolute left-1/2 bottom-1.5 sm:bottom-2.5 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 text-white drop-shadow-2xl z-40 transition-opacity duration-300 ${
         hidden ? "opacity-0" : "opacity-95"
       }`}
     >
