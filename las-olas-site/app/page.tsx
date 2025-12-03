@@ -157,8 +157,8 @@ export default function Home() {
         </div>
 
         {/* Main text container above overlay */}
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-12 pb-9 sm:pb-11">
-          <div className="flex min-h-[70vh] sm:min-h-[74vh] md:min-h-[76vh] flex-col items-center justify-center text-center gap-5 sm:gap-6 md:gap-7">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
+          <div className="flex min-h-[68vh] sm:min-h-[72vh] md:min-h-[75vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-6">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -175,13 +175,13 @@ export default function Home() {
             </div>
 
             <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
                 Beachfront living, reimagined for the modern traveler.
               </h1>
             </div>
 
             {/* Feature pills row */}
-            <div className="mt-1.5 sm:mt-2.5 mb-4 sm:mb-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-1 sm:mt-2 mb-4 sm:mb-7 flex flex-wrap items-center justify-center gap-3">
               {perks.map((perk) => (
                 <span
                   key={perk.label}
@@ -199,7 +199,7 @@ export default function Home() {
             </p>
 
             {/* Booking bar centered under features */}
-            <div className="w-full max-w-4xl pb-3 sm:pb-4 mb-6 sm:mb-7">
+            <div className="w-full max-w-4xl pb-2 sm:pb-3 mb-7 sm:mb-9">
               <BookingHeroWidget />
             </div>
           </div>
