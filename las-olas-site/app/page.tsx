@@ -143,7 +143,7 @@ export default function Home() {
           </video>
 
           {/* Stronger gradient overlay between media and text */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/55 via-slate-900/30 to-slate-900/0" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/25 to-slate-900/0" />
 
           {/* Subtle cinematic layers */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-charcoal/85" />
@@ -158,7 +158,7 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
-          <div className="hero-stack flex min-h-[64vh] sm:min-h-[70vh] md:min-h-[75vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-5">
+          <div className="hero-stack flex min-h-[62vh] sm:min-h-[68vh] md:min-h-[75vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -174,32 +174,32 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-3 sm:space-y-3.5">
               <h1 className="hero-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
                 Beachfront living, reimagined for the modern traveler.
               </h1>
             </div>
 
             {/* Feature pills row */}
-            <div className="mt-1 sm:mt-2 mb-4 sm:mb-7 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-1 sm:mt-1.5 mb-3 sm:mb-5 flex flex-wrap items-center justify-center gap-3">
               {perks.map((perk) => (
                 <span
                   key={perk.label}
                   className="inline-flex items-center rounded-full bg-white/18 border border-white/30 px-5 py-2 text-xs md:text-sm text-slate-50/95 font-medium hover:bg-white/28 hover:border-white/40 hover:-translate-y-[1px] transition-all duration-200 ease-out"
                 >
-                  <span className="h-2.5 w-2.5 rounded-full bg-teal-300/80 mr-3" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/80 mr-3" />
                   <span className="font-medium">{perk.label}</span>
                   <span className="ml-2 text-white/70 text-xs md:text-sm">· {perk.detail}</span>
                 </span>
               ))}
             </div>
 
-            <p className="mx-auto max-w-3xl text-sm leading-relaxed sm:text-base md:text-lg text-white/85 drop-shadow font-light tracking-wide">
+            <p className="mt-3 max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-white/85 leading-relaxed drop-shadow font-light tracking-wide">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
 
             {/* Booking bar centered under features */}
-            <div className="hero-booking-wrap w-full max-w-4xl pb-3 sm:pb-4 mb-10 sm:mb-12">
+            <div className="hero-booking-wrap w-full max-w-4xl pb-2 sm:pb-3 mb-12 sm:mb-14">
               <BookingHeroWidget />
             </div>
           </div>
@@ -378,25 +378,103 @@ export default function Home() {
       </section>
 
       <section
+        id="location-home"
+        className="relative overflow-hidden bg-gradient-to-r from-sand-50 via-white to-sand-100 scroll-mt-24 sm:scroll-mt-28"
+      >
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+        <div className="mx-auto max-w-6xl grid gap-10 px-4 py-12 sm:px-6 lg:px-0 sm:py-14 lg:py-16 lg:grid-cols-[1.05fr_0.95fr] items-center">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">
+              Location
+            </p>
+            <h2 className="font-display text-3xl text-charcoal md:text-4xl">
+              Two minutes from Eagle Beach.
+            </h2>
+            <p className="max-w-2xl text-base text-charcoal/75">
+              Step out of Las Olas and onto the boardwalk that leads directly to Eagle Beach—the Caribbean's #1 and the world's #3 beach. Cafés, dining, and the shoreline are all within a short stroll.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-3 text-sm text-charcoal/80">
+              <div className="rounded-2xl border border-sand-200 bg-white/90 p-4 shadow-sm">
+                <p className="font-semibold text-charcoal">2-minute walk</p>
+                <p className="text-charcoal/70">Boardwalk to Eagle Beach</p>
+              </div>
+              <div className="rounded-2xl border border-sand-200 bg-white/90 p-4 shadow-sm">
+                <p className="font-semibold text-charcoal">On-site</p>
+                <p className="text-charcoal/70">Coffee, dining, car rental</p>
+              </div>
+              <div className="rounded-2xl border border-sand-200 bg-white/90 p-4 shadow-sm">
+                <p className="font-semibold text-charcoal">Central to Aruba</p>
+                <p className="text-charcoal/70">Palm Beach & Oranjestad nearby</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative w-full">
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl border border-sand-200 shadow-lg">
+              <iframe
+                title="Las Olas Condominiums at Eagle Beach"
+                src="https://www.google.com/maps?q=Las+Olas+Condominiums+at+Eagle+Beach&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full border-0"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="contact"
         className="relative overflow-hidden bg-gradient-to-b from-white to-sand-50 scroll-mt-24 sm:scroll-mt-28"
       >
         <div className="absolute inset-x-0 -top-20 h-40 bg-gradient-to-b from-sand-100/80 to-transparent pointer-events-none" />
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-0 sm:py-14 lg:py-16 space-y-6 text-center">
-          <div className="space-y-3">
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-0 sm:py-14 lg:py-16 space-y-8">
+          <div className="space-y-3 text-center">
             <p className="text-xs uppercase tracking-[0.18em] text-teal-900/70">Contact</p>
             <h2 className="font-display text-3xl text-charcoal md:text-4xl">Plan your stay at Las Olas</h2>
             <p className="mx-auto max-w-2xl text-base text-charcoal/75">
               Tell us about your dates and preferences. Our team will confirm availability and curate your experience.
             </p>
           </div>
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
-            <Button asChild className="rounded-full px-6 py-3 shadow-md">
-              <Link href="/book">Check availability</Link>
-            </Button>
-            <Button asChild variant="outline" className="rounded-full px-6 py-3">
-              <Link href="mailto:info@lasolasaruba.com">Email concierge</Link>
-            </Button>
+          <div className="rounded-3xl border border-sand-200 bg-white/90 shadow-xl backdrop-blur px-4 py-6 sm:px-8 sm:py-8">
+            <form className="grid gap-4 sm:gap-5">
+              <div className="grid gap-2">
+                <label className="text-sm font-semibold text-charcoal/80">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  className="w-full rounded-2xl border border-sand-200 bg-white/70 px-4 py-3 text-charcoal placeholder:text-charcoal/40 focus:border-teal-700 focus:ring-2 focus:ring-teal-700/20 outline-none transition"
+                  placeholder="Your full name"
+                />
+              </div>
+              <div className="grid gap-2">
+                <label className="text-sm font-semibold text-charcoal/80">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  className="w-full rounded-2xl border border-sand-200 bg-white/70 px-4 py-3 text-charcoal placeholder:text-charcoal/40 focus:border-teal-700 focus:ring-2 focus:ring-teal-700/20 outline-none transition"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div className="grid gap-2">
+                <label className="text-sm font-semibold text-charcoal/80">Message</label>
+                <textarea
+                  name="message"
+                  rows={5}
+                  className="w-full rounded-2xl border border-sand-200 bg-white/70 px-4 py-3 text-charcoal placeholder:text-charcoal/40 focus:border-teal-700 focus:ring-2 focus:ring-teal-700/20 outline-none transition resize-none"
+                  placeholder="Share your dates, preferences, or questions."
+                />
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-charcoal/60">
+                  We reply quickly with availability and a tailored experience.
+                </p>
+                <Button className="rounded-full px-6 py-3 shadow-md bg-teal-700 text-white hover:bg-teal-900">
+                  Send message
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
