@@ -158,7 +158,46 @@ export default function Home() {
         </div>
 
         {/* Main text container above overlay */}
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
+        {/* Mobile-first hero (unapologetically minimal) */}
+        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-8 pb-12 space-y-6 text-center">
+          <div className="inline-flex items-center gap-3 rounded-full bg-white/14 px-5 py-2 text-[12px] uppercase tracking-[0.22em] text-white ring-1 ring-white/30 backdrop-blur-2xl">
+            <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
+            Aruba · Eagle Beach
+            <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
+          </div>
+          <div className="inline-flex items-center gap-3 rounded-full bg-white/16 px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-white ring-1 ring-white/35 backdrop-blur-2xl">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-yellow-300 animate-ping opacity-75" />
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-400 shadow-sm" />
+            </span>
+            Travelers' Choice 2025 · #3 Beach Worldwide
+          </div>
+          <div className="space-y-2">
+            <h1 className="text-3xl font-light tracking-tight text-white leading-[1.1]">
+              Beachfront living, reimagined for the modern traveler.
+            </h1>
+            <p className="max-w-lg mx-auto text-sm text-white/85 leading-relaxed">
+              Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {perks.map((perk) => (
+              <span
+                key={perk.label}
+                className="inline-flex items-center gap-2 rounded-full bg-white/14 px-3 py-2 text-xs font-medium text-white/90 ring-1 ring-white/25 backdrop-blur-2xl"
+              >
+                <span className="h-2 w-2 rounded-full bg-white/75" />
+                <span className="font-semibold">{perk.label}</span>
+              </span>
+            ))}
+          </div>
+          <div className="w-full max-w-md mx-auto">
+            <BookingHeroWidget />
+          </div>
+        </div>
+
+        {/* Tablet/desktop hero */}
+        <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
           <div className="hero-stack flex min-h-[54vh] sm:min-h-[62vh] md:min-h-[70vh] flex-col items-center justify-center text-center gap-3 sm:gap-4 md:gap-4.5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
