@@ -27,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${inter.variable} ${playfair.variable} bg-sand-50 text-charcoal antialiased`}
+        className={`${inter.variable} ${playfair.variable} bg-sand-50 text-charcoal antialiased overflow-x-hidden`}
       >
         <LoadingOverlay />
         <SiteShell>{children}</SiteShell>

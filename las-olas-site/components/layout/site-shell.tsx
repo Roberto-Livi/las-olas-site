@@ -32,12 +32,12 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/85 shadow-sm backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center gap-3 sm:gap-4 px-4 sm:px-6 py-4 md:py-5 lg:py-8 lg:px-0 pt-[env(safe-area-inset-top)]">
-          <Link href="/" className="flex items-center gap-3">
+      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/92 shadow-sm backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-6xl items-center gap-2.5 sm:gap-4 px-4 sm:px-6 py-3 sm:py-3.5 md:py-5 lg:py-8 lg:px-0 pt-[env(safe-area-inset-top)]">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3">
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-2xl tracking-[0.04em] text-teal-900">Las Olas</span>
-              <span className="text-[11px] uppercase tracking-[0.2em] text-charcoal/70">
+              <span className="font-display text-xl sm:text-2xl tracking-[0.04em] text-teal-900">Las Olas</span>
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-charcoal/70">
                 Condominiums at Eagle Beach
               </span>
             </div>
@@ -78,14 +78,14 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal-500/10 via-white/75 to-cyan-400/10 px-2.5 py-1.5 text-sm font-semibold text-teal-900 ring-1 ring-white/60 shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/60 cursor-pointer lg:hidden"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/85 px-2.5 py-1.25 text-[13px] font-semibold text-teal-900 ring-1 ring-teal-100 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300 cursor-pointer lg:hidden"
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
               <div className="flex h-4 w-5 flex-col justify-between">
-                <span className="block h-[1.5px] w-full rounded-full bg-gradient-to-r from-teal-700 to-cyan-500 transition" />
-                <span className="block h-[1.5px] w-full rounded-full bg-gradient-to-r from-teal-700 to-cyan-500 transition" />
-                <span className="block h-[1.5px] w-full rounded-full bg-gradient-to-r from-teal-700 to-cyan-500 transition" />
+                <span className="block h-[1.5px] w-full rounded-full bg-teal-700 transition" />
+                <span className="block h-[1.5px] w-full rounded-full bg-teal-700 transition" />
+                <span className="block h-[1.5px] w-full rounded-full bg-teal-700 transition" />
               </div>
               <span className="text-sm font-semibold text-teal-900/90">Menu</span>
             </button>
