@@ -32,14 +32,14 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/55 bg-white/82 shadow-[0_6px_24px_-20px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-6xl items-center gap-1.1 sm:gap-3 px-2.4 sm:px-6 py-1.3 sm:py-2.4 md:py-4 lg:py-6 lg:px-0 pt-[env(safe-area-inset-top)]">
-          <Link href="/" className="flex items-center gap-1.25 sm:gap-2">
+      <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 shadow-[0_4px_18px_-18px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-6xl items-center gap-1 sm:gap-3 px-2.1 sm:px-6 py-0.85 sm:py-2.1 md:py-3.5 lg:py-5 lg:px-0 pt-[env(safe-area-inset-top)]">
+          <Link href="/" className="flex items-center gap-1 sm:gap-2">
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-[14px] sm:text-lg md:text-xl tracking-[0.04em] text-teal-900">
+              <span className="font-display text-[13px] sm:text-lg md:text-xl tracking-[0.04em] text-teal-900">
                 Las Olas
               </span>
-              <span className="text-[7px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-charcoal/70">
+              <span className="text-[6.8px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-charcoal/70">
                 Condominiums at Eagle Beach
               </span>
             </div>
@@ -80,16 +80,16 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-1 rounded-full bg-white/90 px-1.8 py-0.85 text-[10.75px] font-semibold text-teal-900/95 ring-1 ring-teal-100/70 shadow-[0_10px_24px_-30px_rgba(0,0,0,0.55)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/70 cursor-pointer lg:hidden"
+              className="inline-flex items-center justify-center gap-0.6 rounded-full bg-white/72 px-1.35 py-0.6 text-[10.2px] font-medium text-teal-900/85 ring-1 ring-white/40 shadow-[0_4px_16px_-20px_rgba(0,0,0,0.5)] backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-[0_6px_18px_-18px_rgba(0,0,0,0.5)] hover:ring-white/55 cursor-pointer lg:hidden"
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
-              <div className="flex h-3 w-3.5 flex-col justify-between">
-                <span className="block h-px w-full rounded-full bg-teal-800/90 transition" />
-                <span className="block h-px w-full rounded-full bg-teal-800/90 transition" />
-                <span className="block h-px w-full rounded-full bg-teal-800/90 transition" />
+              <div className="flex h-2.7 w-3 flex-col justify-between">
+                <span className="block h-px w-full rounded-full bg-teal-800/85 transition" />
+                <span className="block h-px w-full rounded-full bg-teal-800/85 transition" />
+                <span className="block h-px w-full rounded-full bg-teal-800/85 transition" />
               </div>
-              <span className="text-[10.75px] font-semibold text-teal-900/90">Menu</span>
+              <span className="text-[10.2px] font-medium text-teal-900/80">Menu</span>
             </button>
           </div>
         </div>
