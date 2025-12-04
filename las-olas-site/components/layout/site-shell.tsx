@@ -32,12 +32,14 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/55 bg-white/88 shadow-[0_6px_24px_-20px_rgba(0,0,0,0.4)] backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-6xl items-center gap-1.25 sm:gap-3 px-2.75 sm:px-6 py-1.9 sm:py-3.1 md:py-5 lg:py-8 lg:px-0 pt-[env(safe-area-inset-top)]">
-          <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5">
+      <header className="sticky top-0 z-50 border-b border-white/55 bg-white/82 shadow-[0_6px_24px_-20px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-6xl items-center gap-1.1 sm:gap-3 px-2.4 sm:px-6 py-1.3 sm:py-2.4 md:py-4 lg:py-6 lg:px-0 pt-[env(safe-area-inset-top)]">
+          <Link href="/" className="flex items-center gap-1.25 sm:gap-2">
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-[16px] sm:text-xl tracking-[0.04em] text-teal-900">Las Olas</span>
-              <span className="text-[8px] sm:text-[11px] uppercase tracking-[0.2em] text-charcoal/70">
+              <span className="font-display text-[14px] sm:text-lg md:text-xl tracking-[0.04em] text-teal-900">
+                Las Olas
+              </span>
+              <span className="text-[7px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-charcoal/70">
                 Condominiums at Eagle Beach
               </span>
             </div>
@@ -70,7 +72,7 @@ export function SiteShell({ children }: SiteShellProps) {
           <div className="ml-auto flex items-center gap-2 md:gap-3 pr-1 sm:pr-2">
             <Button
               asChild
-              className="hidden md:inline-flex rounded-full px-3.5 py-1.35 text-[13px] shadow-sm bg-teal-700/90 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition ring-1 ring-teal-200/40 [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold"
+              className="hidden md:inline-flex rounded-full px-3 py-1.2 text-[12px] shadow-sm bg-teal-800/90 text-white/95 hover:bg-teal-900 hover:-translate-y-0.5 transition ring-1 ring-teal-100/55 [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold tracking-[0.02em]"
             >
               <Link href="/book" className="text-white !text-white hover:!text-white">
                 Book now
@@ -78,16 +80,16 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-1 rounded-full bg-white/82 px-1.9 py-0.95 text-[11.25px] font-semibold text-teal-900 ring-1 ring-teal-100/65 shadow-[0_10px_26px_-28px_rgba(0,0,0,0.45)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/80 cursor-pointer lg:hidden"
+              className="inline-flex items-center justify-center gap-1 rounded-full bg-white/90 px-1.8 py-0.85 text-[10.75px] font-semibold text-teal-900/95 ring-1 ring-teal-100/70 shadow-[0_10px_24px_-30px_rgba(0,0,0,0.55)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/70 cursor-pointer lg:hidden"
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
-              <div className="flex h-3 w-4 flex-col justify-between">
-                <span className="block h-[1.05px] w-full rounded-full bg-teal-800 transition" />
-                <span className="block h-[1.05px] w-full rounded-full bg-teal-800 transition" />
-                <span className="block h-[1.05px] w-full rounded-full bg-teal-800 transition" />
+              <div className="flex h-3 w-3.5 flex-col justify-between">
+                <span className="block h-px w-full rounded-full bg-teal-800/90 transition" />
+                <span className="block h-px w-full rounded-full bg-teal-800/90 transition" />
+                <span className="block h-px w-full rounded-full bg-teal-800/90 transition" />
               </div>
-              <span className="text-[11.25px] font-semibold text-teal-900/90">Menu</span>
+              <span className="text-[10.75px] font-semibold text-teal-900/90">Menu</span>
             </button>
           </div>
         </div>

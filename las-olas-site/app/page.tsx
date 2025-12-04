@@ -159,41 +159,41 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         {/* Mobile-first hero (unapologetically minimal) */}
-        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-5 pb-8 space-y-4.5 text-center">
-          <div className="flex w-full max-w-xs flex-col items-center gap-1.75 mx-auto">
-            <div className="inline-flex w-full items-center justify-center gap-1.75 rounded-full bg-white/12 px-3.5 py-1.25 text-[10.5px] uppercase tracking-[0.22em] text-white ring-1 ring-white/22 backdrop-blur-2xl">
-              <span className="h-px w-5 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
+        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-4 pb-9 space-y-5 text-center">
+          <div className="flex w-full max-w-[15.5rem] flex-col items-center gap-1.25 mx-auto">
+            <div className="inline-flex w-full items-center justify-center gap-1.4 rounded-full bg-white/8 px-2.4 py-[0.55rem] text-[9.5px] uppercase tracking-[0.2em] text-white/82 ring-1 ring-white/18 backdrop-blur-2xl">
+              <span className="h-px w-4 bg-gradient-to-r from-white/0 via-white/60 to-white/0" />
               Aruba · Eagle Beach
-              <span className="h-px w-5 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
+              <span className="h-px w-3 bg-gradient-to-r from-white/0 via-white/60 to-white/0" />
             </div>
-            <div className="inline-flex w-full items-center justify-center gap-1.75 rounded-full bg-white/14 px-3 py-1.25 text-[10.5px] font-semibold uppercase tracking-[0.18em] text-white ring-1 ring-white/24 backdrop-blur-2xl">
-              <span className="relative flex h-[9px] w-[9px]">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-yellow-300 animate-ping opacity-70" />
-                <span className="relative inline-flex rounded-full h-[9px] w-[9px] bg-yellow-400 shadow-sm" />
+            <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-full bg-white/6 px-2.5 py-[0.5rem] text-[9.75px] font-semibold uppercase tracking-[0.16em] text-white/88 ring-1 ring-white/18 backdrop-blur-2xl">
+              <span className="relative flex h-[7px] w-[7px]">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-yellow-300 animate-ping opacity-60" />
+                <span className="relative inline-flex rounded-full h-[7px] w-[7px] bg-yellow-400 shadow-sm" />
               </span>
               Travelers' Choice 2025 · #3 Beach Worldwide
             </div>
           </div>
-          <div className="space-y-1.25">
-            <h1 className="text-[27px] font-light tracking-tight text-white leading-[1.08]">
+          <div className="space-y-2.6 pt-1 pb-0.5">
+            <h1 className="text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
-            <p className="max-w-lg mx-auto text-[13px] text-white/80 leading-relaxed">
+            <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-1.25">
+          <div className="flex flex-wrap items-center justify-center gap-1">
             {perks.map((perk) => (
               <span
                 key={perk.label}
-                className="inline-flex items-center gap-1.25 rounded-full bg-white/12 px-2.25 py-1.25 text-[10.5px] font-medium text-white/85 ring-1 ring-white/18 backdrop-blur-2xl"
+                className="inline-flex items-center gap-1 rounded-full bg-white/6 px-2.1 py-[0.35rem] text-[10px] font-medium text-white/80 ring-1 ring-white/14 backdrop-blur-2xl"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-white/78" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
                 <span className="font-semibold">{perk.label}</span>
               </span>
             ))}
           </div>
-          <div className="w-full max-w-sm mx-auto">
+          <div className="w-full max-w-[19.5rem] mx-auto">
             <BookingHeroWidget />
           </div>
         </div>
