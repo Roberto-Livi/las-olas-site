@@ -32,8 +32,8 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/80 shadow-sm backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 sm:px-6 py-5 md:py-5 lg:py-8 lg:px-0">
+      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/85 shadow-sm backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center gap-3 sm:gap-4 px-4 sm:px-6 py-4 md:py-5 lg:py-8 lg:px-0 pt-[env(safe-area-inset-top)]">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex flex-col leading-tight">
               <span className="font-display text-2xl tracking-[0.04em] text-teal-900">Las Olas</span>
@@ -78,7 +78,7 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal-500/12 via-white/70 to-cyan-400/12 px-2.5 py-1.5 text-sm font-semibold text-teal-900 ring-1 ring-white/50 shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/50 cursor-pointer lg:hidden"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal-500/10 via-white/75 to-cyan-400/10 px-2.5 py-1.5 text-sm font-semibold text-teal-900 ring-1 ring-white/60 shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/60 cursor-pointer lg:hidden"
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
@@ -114,7 +114,7 @@ export function SiteShell({ children }: SiteShellProps) {
               </button>
             </div>
             <div className="border-t border-teal-100/80 px-5 py-3">
-              <nav className="flex flex-col text-base text-teal-900">
+              <nav className="flex flex-col text-base text-teal-900 leading-relaxed">
                 {navLinks.map((item) => (
                   <Link
                     key={item.href}
