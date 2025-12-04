@@ -60,3 +60,25 @@
     padding-bottom: 0.4rem;
   }
 }
+
+/* Subtle hero entrance for headline and booking card */
+.hero-fade-soft {
+  opacity: 0;
+  animation: heroFadeUp 1.4s ease-out forwards;
+}
+
+.hero-fade-soft-delayed {
+  opacity: 0;
+  animation: heroFadeUp 1.4s ease-out 0.35s forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

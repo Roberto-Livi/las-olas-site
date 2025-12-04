@@ -175,14 +175,14 @@ export default function Home() {
             </div>
           </div>
           <div className="space-y-1.8 pt-1.65 pb-0.4">
-            <h1 className="text-[25px] font-light tracking-tight text-white leading-[1.12]">
+            <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
             <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-[22rem]">
+          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed">
             <BookingHeroWidget variant="mobile" />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-0.75">
@@ -217,17 +217,17 @@ export default function Home() {
             </div>
 
             <div className="space-y-3 sm:space-y-3.5">
-              <h1 className="hero-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
-                Beachfront living, reimagined for the modern traveler.
-              </h1>
-            </div>
+            <h1 className="hero-headline hero-fade-soft text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
+              Beachfront living, reimagined for the modern traveler.
+            </h1>
+          </div>
 
             {/* Feature pills row */}
-            <div className="mt-2 sm:mt-3 mb-4 sm:mb-7 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-2 sm:mt-3 mb-4 sm:mb-7 flex flex-wrap items-center justify-center gap-2.5">
               {perks.map((perk) => (
                 <span
                   key={perk.label}
-                  className="inline-flex items-center rounded-full bg-white/18 border border-white/30 px-5 py-2 text-xs md:text-sm text-slate-50/95 font-medium hover:bg-white/28 hover:border-white/40 hover:-translate-y-[1px] transition-all duration-200 ease-out"
+                  className="inline-flex items-center rounded-[12px] bg-white/18 border border-white/30 px-4 py-1.5 text-[11px] md:text-[12.5px] text-slate-50/95 font-medium hover:bg-white/26 hover:border-white/35 hover:-translate-y-[1px] transition-all duration-200 ease-out"
                 >
                   <span className="h-2.5 w-2.5 rounded-full bg-white/80 mr-3" />
                   <span className="font-medium">{perk.label}</span>
@@ -240,7 +240,7 @@ export default function Home() {
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
 
-            <div className="mt-4 sm:mt-5 w-full px-4 sm:px-2">
+            <div className="mt-4 sm:mt-5 w-full px-4 sm:px-2 hero-fade-soft-delayed">
               <BookingHeroWidget variant="desktop" />
             </div>
           </div>
