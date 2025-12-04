@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { Button } from "@/components/ui/button";
+import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { ResidenceCard } from "@/components/residences/residence-card";
 import { IntroOverlay } from "@/components/intro/intro-overlay";
 import { ScrollIndicator } from "@/components/hero/scroll-indicator";
@@ -182,6 +182,9 @@ export default function Home() {
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
+          <div className="mx-auto w-full max-w-[22rem]">
+            <BookingHeroWidget variant="mobile" />
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-0.75">
             {perks.map((perk) => (
               <span
@@ -193,13 +196,10 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <div className="w-full max-w-[19.5rem] mx-auto">
-            <BookingHeroWidget />
-          </div>
         </div>
 
         {/* Tablet/desktop hero */}
-        <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
+        <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-16 sm:pb-20 lg:pb-24">
           <div className="hero-stack flex min-h-[54vh] sm:min-h-[62vh] md:min-h-[70vh] flex-col items-center justify-center text-center gap-3 sm:gap-4 md:gap-4.5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
@@ -240,9 +240,8 @@ export default function Home() {
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
 
-            {/* Booking bar centered under features */}
-            <div className="hero-booking-wrap w-full max-w-3xl lg:max-w-4xl pb-2 sm:pb-3 mt-4 sm:mt-5 mb-12 sm:mb-16">
-              <BookingHeroWidget />
+            <div className="mt-4 sm:mt-5 w-full px-4 sm:px-2">
+              <BookingHeroWidget variant="desktop" />
             </div>
           </div>
 
