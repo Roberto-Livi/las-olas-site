@@ -32,12 +32,12 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/70 bg-white/92 shadow-sm backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-6xl items-center gap-2.5 sm:gap-4 px-4 sm:px-6 py-3 sm:py-3.5 md:py-5 lg:py-8 lg:px-0 pt-[env(safe-area-inset-top)]">
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3">
+      <header className="sticky top-0 z-50 border-b border-white/60 bg-white/88 shadow-sm backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-6xl items-center gap-2 sm:gap-3 px-3.5 sm:px-6 py-2.5 sm:py-3.5 md:py-5 lg:py-8 lg:px-0 pt-[env(safe-area-inset-top)]">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5">
             <div className="flex flex-col leading-tight">
-              <span className="font-display text-xl sm:text-2xl tracking-[0.04em] text-teal-900">Las Olas</span>
-              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-charcoal/70">
+              <span className="font-display text-lg sm:text-xl tracking-[0.04em] text-teal-900">Las Olas</span>
+              <span className="text-[9px] sm:text-[11px] uppercase tracking-[0.2em] text-charcoal/70">
                 Condominiums at Eagle Beach
               </span>
             </div>
@@ -70,7 +70,7 @@ export function SiteShell({ children }: SiteShellProps) {
           <div className="ml-auto flex items-center gap-2 md:gap-3 pr-1 sm:pr-2">
             <Button
               asChild
-              className="hidden md:inline-flex rounded-full px-5 py-2 shadow-md bg-teal-700 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold"
+              className="hidden md:inline-flex rounded-full px-4.5 py-1.75 shadow-sm bg-teal-700/90 text-white hover:bg-teal-900 hover:-translate-y-0.5 transition ring-1 ring-teal-200/40 [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold"
             >
               <Link href="/book" className="text-white !text-white hover:!text-white">
                 Book now
@@ -78,16 +78,16 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/85 px-2.5 py-1.25 text-[13px] font-semibold text-teal-900 ring-1 ring-teal-100 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300 cursor-pointer lg:hidden"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full bg-white/82 px-2.25 py-1.25 text-[12px] font-semibold text-teal-900 ring-1 ring-teal-100/80 shadow-[0_10px_30px_-24px_rgba(0,0,0,0.4)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:shadow-md hover:ring-teal-300/80 cursor-pointer lg:hidden"
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
-              <div className="flex h-4 w-5 flex-col justify-between">
-                <span className="block h-[1.5px] w-full rounded-full bg-teal-700 transition" />
-                <span className="block h-[1.5px] w-full rounded-full bg-teal-700 transition" />
-                <span className="block h-[1.5px] w-full rounded-full bg-teal-700 transition" />
+              <div className="flex h-3.5 w-4.5 flex-col justify-between">
+                <span className="block h-[1.2px] w-full rounded-full bg-teal-800 transition" />
+                <span className="block h-[1.2px] w-full rounded-full bg-teal-800 transition" />
+                <span className="block h-[1.2px] w-full rounded-full bg-teal-800 transition" />
               </div>
-              <span className="text-sm font-semibold text-teal-900/90">Menu</span>
+              <span className="text-[12px] font-semibold text-teal-900/90">Menu</span>
             </button>
           </div>
         </div>
