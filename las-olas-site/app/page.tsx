@@ -143,13 +143,14 @@ export default function Home() {
           </video>
 
           {/* Stronger gradient overlay between media and text */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/25 to-slate-900/0" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/28 via-slate-900/16 to-slate-900/0" />
 
           {/* Subtle cinematic layers */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-charcoal/85" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(100,220,220,0.06),transparent_45%),radial-gradient(circle_at_75%_5%,rgba(255,255,255,0.06),transparent_40%)] mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/25 via-slate-900/5 to-slate-900/40" />
-          <div className="absolute inset-0 bg-black/18 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/18 via-slate-900/5 to-slate-900/28" />
+          <div className="absolute inset-0 bg-black/12 mix-blend-multiply" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/12 to-black/32" />
 
           {/* Gentle orbs */}
           <div className="absolute top-10 -left-40 h-96 w-96 rounded-full bg-gradient-to-r from-teal-500/18 to-cyan-500/12 blur-3xl opacity-40 animate-pulse-slower" />
@@ -158,7 +159,7 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-8 sm:pb-10">
-          <div className="hero-stack flex min-h-[62vh] sm:min-h-[68vh] md:min-h-[75vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-5">
+          <div className="hero-stack flex min-h-[54vh] sm:min-h-[62vh] md:min-h-[70vh] flex-col items-center justify-center text-center gap-3 sm:gap-4 md:gap-4.5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -181,7 +182,7 @@ export default function Home() {
             </div>
 
             {/* Feature pills row */}
-            <div className="mt-1 sm:mt-1.5 mb-3 sm:mb-5 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-2 sm:mt-3 mb-4 sm:mb-7 flex flex-wrap items-center justify-center gap-3">
               {perks.map((perk) => (
                 <span
                   key={perk.label}
@@ -194,12 +195,12 @@ export default function Home() {
               ))}
             </div>
 
-            <p className="mt-3 max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-white/85 leading-relaxed drop-shadow font-light tracking-wide">
+            <p className="mt-4 max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-white/85 leading-relaxed drop-shadow font-light tracking-wide">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
 
             {/* Booking bar centered under features */}
-            <div className="hero-booking-wrap w-full max-w-4xl pb-2 sm:pb-3 mb-12 sm:mb-14">
+            <div className="hero-booking-wrap w-full max-w-3xl lg:max-w-4xl pb-2 sm:pb-3 mt-4 sm:mt-5 mb-12 sm:mb-16">
               <BookingHeroWidget />
             </div>
           </div>
