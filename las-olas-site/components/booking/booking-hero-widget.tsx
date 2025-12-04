@@ -20,18 +20,7 @@ function MobileWidget() {
       <div className="relative overflow-hidden rounded-[22px] border border-white/14 bg-white/10 shadow-[0_16px_44px_-32px_rgba(0,0,0,0.75)] ring-1 ring-white/14 backdrop-blur-2xl">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_22%,rgba(255,255,255,0.18),transparent_40%),radial-gradient(circle_at_80%_18%,rgba(15,118,110,0.14),transparent_32%)] opacity-80" />
 
-        <div className="relative flex items-center justify-between px-4 py-3.5">
-          <div className="flex flex-col gap-1 text-left">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-white/65">Book Eagle Beach</p>
-            <p className="text-[15px] font-semibold leading-tight text-white">Plan your stay</p>
-          </div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/16 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white ring-1 ring-white/25">
-            <span className="h-[6px] w-[6px] rounded-full bg-emerald-200 shadow-[0_0_0_6px_rgba(255,255,255,0.1)]" />
-            24/7
-          </div>
-        </div>
-
-        <div className="relative grid grid-cols-3 divide-x divide-white/12 border-t border-white/12 bg-white/8 px-3 py-2.5 text-sm text-white/90">
+        <div className="relative grid grid-cols-3 divide-x divide-white/12 px-3 py-2.5 text-sm text-white/90">
           <div className="flex flex-col gap-1 pr-2">
             <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">Check-in</span>
             <span className="text-[13px] font-semibold leading-tight">Dec 12</span>
@@ -46,10 +35,9 @@ function MobileWidget() {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-between px-4 py-3">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">Instant hold · No card</span>
+        <div className="relative flex items-center justify-center px-4 py-3">
           <Button className="h-9 rounded-full bg-teal-800/90 px-4 text-[12px] font-semibold text-white shadow-[0_12px_40px_-32px_rgba(0,0,0,0.9)] ring-1 ring-teal-100/55 hover:bg-teal-900">
-            Start
+            Check availability
           </Button>
         </div>
       </div>
