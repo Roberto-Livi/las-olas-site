@@ -159,14 +159,14 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         {/* Mobile-first hero (unapologetically minimal) */}
-        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-4 pb-9 space-y-4.75 text-center">
-          <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.9 mx-auto">
-            <div className="inline-flex w-full items-center justify-center gap-1.2 rounded-full bg-white/7 px-2.1 py-[0.44rem] text-[9.1px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
+        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-5 pb-9 space-y-5.1 text-center">
+          <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.85 mx-auto">
+            <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[11px] bg-white/7 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
               <span className="h-px w-3.5 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
               Aruba · Eagle Beach
               <span className="h-px w-3 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
             </div>
-            <div className="inline-flex w-full items-center justify-center gap-0.95 rounded-full bg-white/5 px-2.2 py-[0.42rem] text-[9.25px] font-semibold uppercase tracking-[0.15em] text-white/85 ring-1 ring-white/16 backdrop-blur-2xl">
+            <div className="inline-flex w-full items-center justify-center gap-0.9 rounded-[11px] bg-white/5 px-2 py-[0.32rem] text-[8.8px] font-semibold uppercase tracking-[0.15em] text-white/85 ring-1 ring-white/16 backdrop-blur-2xl">
               <span className="relative flex h-[6.5px] w-[6.5px]">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-yellow-300 animate-ping opacity-55" />
                 <span className="relative inline-flex rounded-full h-[6.5px] w-[6.5px] bg-yellow-400 shadow-sm" />
@@ -174,7 +174,7 @@ export default function Home() {
               Travelers' Choice 2025 · #3 Beach Worldwide
             </div>
           </div>
-          <div className="space-y-1.6 pt-1.35 pb-0.4">
+          <div className="space-y-1.8 pt-1.65 pb-0.4">
             <h1 className="text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
@@ -182,11 +182,11 @@ export default function Home() {
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-0.85">
+          <div className="flex flex-wrap items-center justify-center gap-0.75">
             {perks.map((perk) => (
               <span
                 key={perk.label}
-                className="inline-flex items-center gap-0.75 rounded-[12px] bg-white/6 px-1.85 py-[0.28rem] text-[9.6px] font-medium text-white/78 ring-1 ring-white/12 backdrop-blur-2xl"
+                className="inline-flex items-center gap-0.7 rounded-[10px] bg-white/6 px-1.65 py-[0.22rem] text-[9px] font-medium text-white/78 ring-1 ring-white/12 backdrop-blur-2xl"
               >
                 <span className="h-[0.35rem] w-[0.35rem] rounded-full bg-white/68" />
                 <span className="font-semibold">{perk.label}</span>
