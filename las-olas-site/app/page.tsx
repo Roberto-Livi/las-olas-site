@@ -91,10 +91,7 @@ const suites = [
   },
 ];
 
-const perks = [
-  { label: "37 residences", detail: "Private, boutique scale" },
-  { label: "2-minute walk", detail: "Direct to Eagle Beach" },
-];
+const perks = [{ label: "2-minute walk", detail: "Direct to Eagle Beach" }];
 
 const amenities = [
   {
@@ -161,23 +158,19 @@ export default function Home() {
         {/* Mobile-first hero (unapologetically minimal) */}
         <div className="relative z-10 mx-auto block sm:hidden px-4 pt-5 pb-9 space-y-5.1 text-center">
           <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.85 mx-auto">
-            <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[11px] bg-white/7 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
+            <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[10px] bg-white/8 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
               <span className="h-px w-3.5 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
               Aruba · Eagle Beach
               <span className="h-px w-3 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
             </div>
-            <div className="inline-flex w-full items-center justify-center gap-0.9 rounded-[11px] bg-white/5 px-2 py-[0.32rem] text-[8.8px] font-semibold uppercase tracking-[0.15em] text-white/85 ring-1 ring-white/16 backdrop-blur-2xl">
-              <span className="relative flex h-[6.5px] w-[6.5px]">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-yellow-300 animate-ping opacity-55" />
-                <span className="relative inline-flex rounded-full h-[6.5px] w-[6.5px] bg-yellow-400 shadow-sm" />
-              </span>
-              Travelers' Choice 2025 · #3 Beach Worldwide
-            </div>
           </div>
-          <div className="space-y-1.8 pt-1.65 pb-0.4">
+          <div className="space-y-1.6 pt-1.4 pb-0.4">
             <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
+            <p className="text-[11px] uppercase tracking-[0.16em] text-white/76">
+              Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
+            </p>
             <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
@@ -185,14 +178,14 @@ export default function Home() {
           <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed">
             <BookingHeroWidget variant="mobile" />
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-0.75">
+          <div className="flex flex-wrap items-center justify-center gap-1.5">
             {perks.map((perk) => (
               <span
                 key={perk.label}
-                className="inline-flex items-center gap-0.7 rounded-[10px] bg-white/6 px-1.65 py-[0.22rem] text-[9px] font-medium text-white/78 ring-1 ring-white/12 backdrop-blur-2xl"
+                className="inline-flex items-center gap-1.5 rounded-[9px] bg-white/12 px-[0.7rem] py-[0.32rem] text-[9.5px] font-medium text-white/82 ring-1 ring-white/18 backdrop-blur-2xl"
               >
-                <span className="h-[0.35rem] w-[0.35rem] rounded-full bg-white/68" />
                 <span className="font-semibold">{perk.label}</span>
+                <span className="text-white/70 text-[9.5px]">· {perk.detail}</span>
               </span>
             ))}
           </div>
@@ -202,46 +195,40 @@ export default function Home() {
         <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-16 sm:pb-20 lg:pb-24">
           <div className="hero-stack flex min-h-[54vh] sm:min-h-[62vh] md:min-h-[70vh] flex-col items-center justify-center text-center gap-3 sm:gap-4 md:gap-4.5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
-              <div className="inline-flex items-center gap-4 rounded-full bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
+              <div className="inline-flex items-center gap-4 rounded-[12px] bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
                 <span className="font-medium">Aruba · Eagle Beach</span>
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
               </div>
-
-              <div className="inline-flex items-center gap-3 rounded-full bg-white/14 px-5 py-2.5 text-[12px] sm:text-[13px] font-semibold uppercase tracking-[0.2em] text-white ring-1 ring-white/35 backdrop-blur-2xl">
-                <span className="relative flex h-3 w-3">
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-300 shadow-sm" />
-                </span>
-                <span>Tripadvisor Travelers' Choice 2025 · #3 Beach Worldwide</span>
-              </div>
             </div>
 
             <div className="space-y-3 sm:space-y-3.5">
-            <h1 className="hero-headline hero-fade-soft text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
-              Beachfront living, reimagined for the modern traveler.
-            </h1>
-          </div>
-
-            {/* Feature pills row */}
-            <div className="mt-2 sm:mt-3 mb-4 sm:mb-7 flex flex-wrap items-center justify-center gap-2.5">
-              {perks.map((perk) => (
-                <span
-                  key={perk.label}
-                  className="inline-flex items-center rounded-[12px] bg-white/18 border border-white/30 px-4 py-1.5 text-[11px] md:text-[12.5px] text-slate-50/95 font-medium hover:bg-white/26 hover:border-white/35 hover:-translate-y-[1px] transition-all duration-200 ease-out"
-                >
-                  <span className="h-2.5 w-2.5 rounded-full bg-white/80 mr-3" />
-                  <span className="font-medium">{perk.label}</span>
-                  <span className="ml-2 text-white/70 text-xs md:text-sm">· {perk.detail}</span>
-                </span>
-              ))}
+              <h1 className="hero-headline hero-fade-soft text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
+                Beachfront living, reimagined for the modern traveler.
+              </h1>
+              <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-white/78">
+                Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
+              </p>
             </div>
 
-            <p className="mt-4 max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-white/85 leading-relaxed drop-shadow font-light tracking-wide">
+            <p className="mt-2 max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-white/85 leading-relaxed drop-shadow font-light tracking-wide">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
 
             <div className="mt-4 sm:mt-5 w-full px-4 sm:px-2 hero-fade-soft-delayed">
               <BookingHeroWidget variant="desktop" />
+            </div>
+
+            <div className="mt-3 sm:mt-4 flex flex-wrap items-center justify-center gap-2">
+              {perks.map((perk) => (
+                <span
+                  key={perk.label}
+                  className="inline-flex items-center rounded-[10px] bg-white/18 border border-white/28 px-3.5 py-[0.35rem] text-[11px] md:text-[12px] text-slate-50/95 font-medium hover:bg-white/24 hover:border-white/32 hover:-translate-y-[1px] transition-all duration-200 ease-out"
+                >
+                  <span className="font-medium">{perk.label}</span>
+                  <span className="ml-2 text-white/70 text-[11px] md:text-[12px]">· {perk.detail}</span>
+                </span>
+              ))}
             </div>
           </div>
 
