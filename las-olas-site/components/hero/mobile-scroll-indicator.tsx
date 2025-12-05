@@ -2,9 +2,12 @@
 
 type MobileScrollIndicatorProps = {
   targetId?: string;
+  className?: string;
 };
 
-export function MobileScrollIndicator({ targetId = "eagle-beach" }: MobileScrollIndicatorProps) {
+const cn = (...classes: Array<string | undefined>) => classes.filter(Boolean).join(" ");
+
+export function MobileScrollIndicator({ targetId = "eagle-beach", className }: MobileScrollIndicatorProps) {
   const handleClick = () => {
     const el = document.getElementById(targetId);
     if (el) {
@@ -16,7 +19,10 @@ export function MobileScrollIndicator({ targetId = "eagle-beach" }: MobileScroll
     <button
       type="button"
       onClick={handleClick}
-      className="mx-auto mt-3 flex flex-col items-center gap-1 text-white/80 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60"
+      className={cn(
+        "flex flex-col items-center gap-1 text-white/80 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60",
+        className ?? "mx-auto mt-3"
+      )}
       aria-label="Scroll to next section"
     >
       <svg

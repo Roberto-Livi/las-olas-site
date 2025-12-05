@@ -157,7 +157,7 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         {/* Mobile-first hero (unapologetically minimal) */}
-        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-7 pb-8 space-y-5 text-center">
+        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-6 pb-0 space-y-4 text-center">
           <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.85 mx-auto">
             <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[10px] bg-white/8 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
               <span className="h-px w-3.5 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
@@ -165,22 +165,22 @@ export default function Home() {
               <span className="h-px w-3 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
             </div>
           </div>
-          <div className="space-y-2.2 pt-1.8 pb-0.4">
+          <div className="space-y-1.8 pt-1.4 pb-0.3">
             <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
             <p className="text-[10.1px] uppercase tracking-[0.11em] text-white/76">
               Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
             </p>
-            <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed">
+            <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed mb-1">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
-          <p className="text-[12px] text-white/88 mt-1 mb-3.5">Just a 2-minute stroll from Eagle Beach.</p>
-          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-7">
+          <p className="text-[12px] text-white/88 mt-0.25 mb-2">Just a 2-minute stroll from Eagle Beach.</p>
+          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
             <BookingHeroWidget variant="mobile" />
           </div>
-          <MobileScrollIndicator />
+          <MobileScrollIndicator className="absolute left-1/2 bottom-2.5 -translate-x-1/2" />
         </div>
 
         {/* Tablet/desktop hero */}
