@@ -5,6 +5,7 @@ import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { ResidenceCard } from "@/components/residences/residence-card";
 import { IntroOverlay } from "@/components/intro/intro-overlay";
 import { ScrollIndicator } from "@/components/hero/scroll-indicator";
+import { MobileScrollIndicator } from "@/components/hero/mobile-scroll-indicator";
 import "./hero-overrides.css";
 
 const highlights = [
@@ -168,17 +169,18 @@ export default function Home() {
             <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
-            <p className="text-[10.5px] uppercase tracking-[0.14em] text-white/76">
+            <p className="text-[10.25px] uppercase tracking-[0.12em] text-white/76">
               Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
             </p>
             <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
-          <p className="text-[11px] text-white/78">Just a 2-minute stroll from Eagle Beach.</p>
-          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
+          <p className="text-[12px] text-white/88 mt-1 mb-3">Just a 2-minute stroll from Eagle Beach.</p>
+          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-6">
             <BookingHeroWidget variant="mobile" />
           </div>
+          <MobileScrollIndicator />
         </div>
 
         {/* Tablet/desktop hero */}

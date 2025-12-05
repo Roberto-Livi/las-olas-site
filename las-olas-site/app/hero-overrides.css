@@ -72,6 +72,10 @@
   animation: heroFadeUp 1.4s ease-out 0.35s forwards;
 }
 
+.animate-float-soft {
+  animation: floatSoft 2.6s ease-in-out infinite;
+}
+
 @keyframes heroFadeUp {
   from {
     opacity: 0;
@@ -79,6 +83,18 @@
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
     transform: translateY(0);
   }
 }
