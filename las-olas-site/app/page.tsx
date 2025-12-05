@@ -180,7 +180,7 @@ export default function Home() {
           <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
             <BookingHeroWidget variant="mobile" />
           </div>
-          <MobileScrollIndicator className="mt-12" />
+          <MobileScrollIndicator className="mt-19" />
         </div>
 
         {/* Tablet/desktop hero */}

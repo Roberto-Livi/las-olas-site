@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 type MobileScrollIndicatorProps = {
   targetId?: string;
   className?: string;
@@ -8,6 +10,15 @@ type MobileScrollIndicatorProps = {
 const cn = (...classes: Array<string | undefined>) => classes.filter(Boolean).join(" ");
 
 export function MobileScrollIndicator({ targetId = "eagle-beach", className }: MobileScrollIndicatorProps) {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setHidden(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleClick = () => {
     const el = document.getElementById(targetId);
     if (el) {
@@ -21,6 +32,7 @@ export function MobileScrollIndicator({ targetId = "eagle-beach", className }: M
       onClick={handleClick}
       className={cn(
         "flex flex-col items-center gap-1 text-white/80 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60",
+        hidden ? "opacity-0 pointer-events-none" : "opacity-100",
         className ?? "mx-auto mt-3"
       )}
       aria-label="Scroll to next section"
