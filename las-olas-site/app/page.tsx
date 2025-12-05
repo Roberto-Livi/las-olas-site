@@ -175,19 +175,9 @@ export default function Home() {
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
+          <p className="text-[11px] text-white/78">Just a 2-minute stroll from Eagle Beach.</p>
           <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
             <BookingHeroWidget variant="mobile" />
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-1 mt-1.5">
-            {perks.map((perk) => (
-              <span
-                key={perk.label}
-                className="inline-flex items-center gap-1.25 rounded-[8px] bg-white/12 px-2.5 py-[0.26rem] text-[9.5px] font-medium text-white/82 ring-1 ring-white/18 backdrop-blur-2xl"
-              >
-                <span className="font-semibold">{perk.label}</span>
-                <span className="text-white/70 text-[9.5px]">· {perk.detail}</span>
-              </span>
-            ))}
           </div>
         </div>
 
@@ -215,20 +205,10 @@ export default function Home() {
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
 
+            <p className="text-xs sm:text-sm text-white/78">Just a 2-minute stroll from Eagle Beach.</p>
+
             <div className="mt-4 sm:mt-5 w-full px-4 sm:px-2 hero-fade-soft-delayed">
               <BookingHeroWidget variant="desktop" />
-            </div>
-
-            <div className="mt-3 sm:mt-4 flex flex-wrap items-center justify-center gap-2">
-              {perks.map((perk) => (
-                <span
-                  key={perk.label}
-                  className="inline-flex items-center rounded-[10px] bg-white/18 border border-white/28 px-3.5 py-[0.35rem] text-[11px] md:text-[12px] text-slate-50/95 font-medium hover:bg-white/24 hover:border-white/32 hover:-translate-y-[1px] transition-all duration-200 ease-out"
-                >
-                  <span className="font-medium">{perk.label}</span>
-                  <span className="ml-2 text-white/70 text-[11px] md:text-[12px]">· {perk.detail}</span>
-                </span>
-              ))}
             </div>
           </div>
 
