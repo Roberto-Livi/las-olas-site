@@ -157,7 +157,7 @@ export default function Home() {
 
         {/* Main text container above overlay */}
         {/* Mobile-first hero (unapologetically minimal) */}
-        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-6 pb-3 space-y-4 text-center flex min-h-screen flex-col items-center justify-center">
+        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-12 pb-6 space-y-4 text-center flex min-h-screen flex-col items-center justify-start">
           <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.85 mx-auto">
             <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[10px] bg-white/8 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
               <span className="h-px w-3.5 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
