@@ -168,21 +168,21 @@ export default function Home() {
             <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
               Beachfront living, reimagined for the modern traveler.
             </h1>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-white/76">
+            <p className="text-[10.5px] uppercase tracking-[0.14em] text-white/76">
               Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
             </p>
             <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed">
               Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-4">
+          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
             <BookingHeroWidget variant="mobile" />
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-1.5 mt-3">
+          <div className="flex flex-wrap items-center justify-center gap-1 mt-1.5">
             {perks.map((perk) => (
               <span
                 key={perk.label}
-                className="inline-flex items-center gap-1.5 rounded-[9px] bg-white/12 px-[0.7rem] py-[0.32rem] text-[9.5px] font-medium text-white/82 ring-1 ring-white/18 backdrop-blur-2xl"
+                className="inline-flex items-center gap-1.25 rounded-[8px] bg-white/12 px-2.5 py-[0.26rem] text-[9.5px] font-medium text-white/82 ring-1 ring-white/18 backdrop-blur-2xl"
               >
                 <span className="font-semibold">{perk.label}</span>
                 <span className="text-white/70 text-[9.5px]">· {perk.detail}</span>
