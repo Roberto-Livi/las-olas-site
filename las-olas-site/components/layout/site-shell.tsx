@@ -74,7 +74,7 @@ export function SiteShell({ children }: SiteShellProps) {
           <div className="ml-auto flex items-center gap-1 md:gap-2.5 pr-1 sm:pr-2">
             <Button
               asChild
-              className="inline-flex rounded-[12px] px-2 py-1.5 text-[11px] shadow-sm bg-teal-800/90 text-white/95 hover:bg-teal-900 hover:-translate-y-[1px] transition ring-1 ring-teal-100/55 [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold tracking-[0.02em] md:rounded-[14px] md:px-2.5 md:py-1.75 md:text-[12px]"
+              className="inline-flex rounded-[10px] px-1.5 py-1 text-[10px] shadow-sm bg-teal-800/90 text-white/95 hover:bg-teal-900 hover:-translate-y-[1px] transition ring-1 ring-teal-100/55 [&_a]:!text-white [&_a]:!hover:text-white [&_a]:font-semibold tracking-[0.02em] md:rounded-[14px] md:px-2.5 md:py-1.75 md:text-[12px]"
             >
               <Link href="/book" className="text-white !text-white hover:!text-white">
                 Book now
@@ -82,14 +82,14 @@ export function SiteShell({ children }: SiteShellProps) {
             </Button>
             <button
               type="button"
-              className={`${mobileActionBase} lg:hidden gap-1 bg-white/75 text-teal-900/90 ring-1 ring-white/45 shadow-[0_6px_16px_-20px_rgba(0,0,0,0.45)] backdrop-blur-md hover:-translate-y-0.5 hover:shadow-[0_6px_18px_-18px_rgba(0,0,0,0.5)] hover:ring-white/60`}
+              className={`${mobileActionBase} lg:hidden gap-1 bg-white/78 text-teal-900/90 ring-1 ring-white/50 shadow-[0_4px_12px_-18px_rgba(0,0,0,0.4)] backdrop-blur-md hover:-translate-y-0.5 hover:shadow-[0_6px_16px_-18px_rgba(0,0,0,0.45)] hover:ring-white/60`}
               onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Open menu</span>
-              <div className="flex h-[1.75rem] w-[0.65rem] flex-col justify-between">
-                <span className="block h-[1.1px] w-full rounded-full bg-teal-800/85 transition" />
-                <span className="block h-[1.1px] w-full rounded-full bg-teal-800/85 transition" />
-                <span className="block h-[1.1px] w-full rounded-full bg-teal-800/85 transition" />
+              <div className="flex h-3 w-3.5 flex-col justify-between">
+                <span className="block h-[1px] w-full rounded-full bg-teal-800/85 transition" />
+                <span className="block h-[1px] w-full rounded-full bg-teal-800/85 transition" />
+                <span className="block h-[1px] w-full rounded-full bg-teal-800/85 transition" />
               </div>
               <span className="text-[10px] font-semibold text-teal-900/90">Menu</span>
             </button>
