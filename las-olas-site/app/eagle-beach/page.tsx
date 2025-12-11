@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Eagle Beach Aruba | Las Olas Beachfront Apartments",
+  description:
+    "Discover Eagle Beach, Aruba—steps from Las Olas beachfront apartments. Calm turquoise water, fofoti trees, and #3 beach in the world just a 2-minute walk away.",
+};
 
 const whyCards = [
   { title: "Soft white sand", copy: "Powdery, pristine sand ideal for sunrise strolls and sunset lounging." },

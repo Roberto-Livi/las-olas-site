@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Eagle Beach Aruba Location | Las Olas Apartments",
+  description:
+    "Find Las Olas on Eagle Beach, Aruba. Two-minute walk to the sand, near dining, groceries, Palm Beach nightlife, casinos, and golf—ideal for beachfront vacation rentals.",
+};
+
 const highlights = [
   { title: "Eagle Beach", distance: "2-minute walk", detail: "#3 Beach in the World · Tripadvisor 2025", icon: "🏖️" },
   { title: "Supermarket", distance: "5-minute walk", detail: "Groceries and daily essentials nearby", icon: "🛒" },
@@ -59,6 +68,15 @@ export default function LocationPage() {
               <p className="mt-3 text-sm leading-relaxed text-charcoal/75">{item.detail}</p>
             </div>
           ))}
+        </div>
+
+        <div className="pt-2 flex flex-wrap gap-3 text-sm">
+          <Link href="/book" className="rounded-full bg-teal-900/10 px-3 py-2 text-teal-900 font-semibold hover:bg-teal-900/15">
+            Book beachfront apartments near Eagle Beach
+          </Link>
+          <Link href="/faq" className="rounded-full bg-white border border-sand-200 px-3 py-2 text-charcoal hover:border-teal-700/40">
+            Read guest FAQs for Las Olas Aruba
+          </Link>
         </div>
       </section>
     </div>

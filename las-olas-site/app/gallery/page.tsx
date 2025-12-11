@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Las Olas Gallery | Eagle Beach Aruba Apartments",
+  description:
+    "Explore Las Olas in pictures—Eagle Beach Aruba apartments, pool, building, and shoreline views from our beachfront vacation rentals.",
+};
+
 const sections = [
   {
     title: "Building & Pool",
@@ -76,6 +85,17 @@ export default function GalleryPage() {
           </div>
         ))}
       </section>
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-0">
+        <div className="rounded-3xl border border-sand-200 bg-white/90 p-6 shadow-sm flex flex-wrap gap-3 text-sm">
+          <Link href="/book" className="rounded-full bg-teal-900/10 px-3 py-2 text-teal-900 font-semibold hover:bg-teal-900/15">
+            Book Eagle Beach apartments
+          </Link>
+          <Link href="/eagle-beach" className="rounded-full bg-white border border-sand-200 px-3 py-2 text-charcoal hover:border-teal-700/40">
+            Explore Eagle Beach from Las Olas
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

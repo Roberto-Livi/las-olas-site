@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ResidenceCard } from "@/components/residences/residence-card";
+
+export const metadata: Metadata = {
+  title: "Book Eagle Beach Apartments | Las Olas Aruba",
+  description:
+    "Book Eagle Beach apartments in Aruba at Las Olas. Choose studio to 3-bedroom beachfront vacation rentals with full kitchens, balconies, and concierge service.",
+};
 
 const categories = [
   {

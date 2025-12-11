@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "About Las Olas | Eagle Beach Apartments in Aruba",
+  description:
+    "Learn about Las Olas—37 beachfront apartments in Eagle Beach, Aruba, offering modern condo-hotel comforts, full kitchens, and concierge service steps from the sand.",
+};
 
 const values = [
   { title: "Comfort", body: "Residences designed with soft palettes, natural light, and private outdoor space." },
@@ -43,6 +51,11 @@ export default function AboutPage() {
             Wake to soft light, walk two minutes to turquoise water, and return to a residence that feels like home—with
             resort-level support when you want it.
           </p>
+          <div className="pt-2">
+            <Link href="/eagle-beach" className="text-teal-900 underline decoration-2 underline-offset-4 hover:text-teal-700">
+              See why Eagle Beach is the #3 beach in the world
+            </Link>
+          </div>
         </div>
         <div className="rounded-3xl border border-sand-200 bg-white/90 p-6 shadow-md backdrop-blur">
           <h3 className="font-display text-xl text-charcoal">Highlights</h3>

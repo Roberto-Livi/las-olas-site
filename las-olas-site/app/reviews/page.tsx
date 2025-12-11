@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Guest Reviews | Las Olas Eagle Beach Apartments",
+  description:
+    "Read guest reviews of Las Olas Eagle Beach apartments in Aruba—beachfront vacation rentals with concierge service, pool, and 2-minute walk to the sand.",
+};
+
 const testimonials = [
   {
     name: "Sofia M.",
@@ -60,6 +69,15 @@ export default function ReviewsPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link href="/book" className="rounded-full bg-teal-900/10 px-3 py-2 text-teal-900 font-semibold hover:bg-teal-900/15">
+            Book Eagle Beach apartments in Aruba
+          </Link>
+          <Link href="/faq" className="rounded-full bg-white border border-sand-200 px-3 py-2 text-charcoal hover:border-teal-700/40">
+            Read our FAQ before you book
+          </Link>
         </div>
       </section>
     </div>

@@ -1,5 +1,13 @@
 "use client";
+import type { Metadata } from "next";
+import Script from "next/script";
 import { useState } from "react";
+
+export const metadata: Metadata = {
+  title: "Eagle Beach Aruba FAQ | Las Olas Apartments",
+  description:
+    "Answers about staying at Las Olas—Eagle Beach Aruba apartments with on-site parking, beach towels, daily refresh, family amenities, and 2-minute walk to the sand.",
+};
 
 const faqs = [
   { q: "How far is Las Olas from Eagle Beach?", a: "A 2-minute walk—direct boardwalk access from the property." },
@@ -14,9 +22,27 @@ const faqs = [
 
 export default function FaqPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
 
   return (
     <div className="space-y-16 pb-20">
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="relative overflow-hidden bg-gradient-to-r from-sand-50 via-white to-sand-100">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -left-14 top-0 h-56 w-56 rounded-full bg-teal-900/10 blur-3xl" />

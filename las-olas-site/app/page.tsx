@@ -1,12 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { ResidenceCard } from "@/components/residences/residence-card";
 import { IntroOverlay } from "@/components/intro/intro-overlay";
 import { ScrollIndicator } from "@/components/hero/scroll-indicator";
 import { MobileScrollIndicator } from "@/components/hero/mobile-scroll-indicator";
+import { HeroVideo } from "@/components/hero/hero-video";
 import "./hero-overrides.css";
+
+export const metadata: Metadata = {
+  title: "Eagle Beach Apartments in Aruba | Beachfront Vacation Rentals",
+  description:
+    "Las Olas offers 37 beachfront vacation rentals in Eagle Beach, Aruba—modern condos with full kitchens, balconies, and concierge-level service steps from the shore.",
+};
 
 const highlights = [
   {
@@ -167,7 +175,7 @@ export default function Home() {
           </div>
           <div className="space-y-1.8 pt-1.4 pb-0.3">
             <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12] mb-5">
-              Beachfront living, reimagined for the modern traveler.
+              Eagle Beach apartments in Aruba—beachfront living, reimagined.
             </h1>
             <p className="text-[10.1px] uppercase tracking-[0.11em] text-white/76 mb-5.5">
               Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
@@ -196,7 +204,7 @@ export default function Home() {
 
             <div className="space-y-3 sm:space-y-3.5">
               <h1 className="hero-headline hero-fade-soft text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
-                Beachfront living, reimagined for the modern traveler.
+                Eagle Beach apartments in Aruba—beachfront living, reimagined.
               </h1>
               <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-white/78">
                 Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
@@ -262,7 +270,13 @@ export default function Home() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-1 rounded-full bg-teal-900/10 px-3 py-1 text-teal-900 underline decoration-2 underline-offset-4 hover:bg-teal-900/15"
               >
-                View ranking
+                View Tripadvisor beach ranking
+              </Link>
+              <Link
+                href="/eagle-beach"
+                className="inline-flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-teal-900 ring-1 ring-sand-200 hover:bg-sand-50"
+              >
+                Learn more about Eagle Beach
               </Link>
             </div>
           </div>
