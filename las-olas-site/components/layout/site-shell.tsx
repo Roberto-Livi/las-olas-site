@@ -34,7 +34,7 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b border-white/60 bg-white/70 shadow-[0_10px_28px_-24px_rgba(10,82,75,0.25)] backdrop-blur-2xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-white shadow-[0_10px_28px_-24px_rgba(10,82,75,0.25)]">
         <div className="mx-auto flex max-w-6xl items-center gap-1.25 sm:gap-3 px-3 sm:px-6 py-0.5 sm:py-1 md:py-1.75 lg:py-2.5 lg:px-0 pt-[env(safe-area-inset-top)]">
           <Link href="/" className="flex items-center gap-1 sm:gap-1.5">
             <div className="flex flex-col leading-tight">

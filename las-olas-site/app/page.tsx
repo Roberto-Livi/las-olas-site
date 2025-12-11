@@ -126,7 +126,7 @@ export default function Home() {
     <div className="space-y-24 lg:space-y-32">
       {/* <IntroOverlay /> */}
       {/* CALM, LUXURY HERO */}
-      <section className="relative isolate min-h-screen w-full bg-charcoal text-white">
+      <section className="relative isolate min-h-screen w-full bg-charcoal pt-8 sm:pt-12 lg:pt-16">
         {/* Background media */}
         <div className="absolute inset-0">
           <video
