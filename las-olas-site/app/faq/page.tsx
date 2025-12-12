@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   title: "Eagle Beach Aruba FAQ | Las Olas Apartments",
   description:
     "Answers about staying at Las Olas—Eagle Beach Aruba apartments with on-site parking, beach towels, daily refresh, family amenities, and 2-minute walk to the sand.",
+  openGraph: {
+    title: "Eagle Beach Aruba FAQ | Las Olas Apartments",
+    description:
+      "Answers about staying at Las Olas—Eagle Beach Aruba apartments with on-site parking, beach towels, daily refresh, family amenities, and 2-minute walk to the sand.",
+    url: "/faq",
+    type: "website",
+  },
+  alternates: { canonical: "/faq" },
 };
 
 export default function FaqPage() {

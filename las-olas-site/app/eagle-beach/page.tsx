@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Eagle Beach Aruba | Las Olas Beachfront Apartments",
   description:
     "Discover Eagle Beach, Aruba—steps from Las Olas beachfront apartments. Calm turquoise water, fofoti trees, and #3 beach in the world just a 2-minute walk away.",
+  openGraph: {
+    title: "Eagle Beach Aruba | Las Olas Beachfront Apartments",
+    description:
+      "Discover Eagle Beach, Aruba—steps from Las Olas beachfront apartments. Calm turquoise water, fofoti trees, and #3 beach in the world just a 2-minute walk away.",
+    url: "/eagle-beach",
+    type: "website",
+  },
+  alternates: { canonical: "/eagle-beach" },
 };
 
 const whyCards = [

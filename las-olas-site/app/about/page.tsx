@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "About Las Olas | Eagle Beach Apartments in Aruba",
   description:
     "Learn about Las Olas—37 beachfront apartments in Eagle Beach, Aruba, offering modern condo-hotel comforts, full kitchens, and concierge service steps from the sand.",
+  openGraph: {
+    title: "About Las Olas | Eagle Beach Apartments in Aruba",
+    description:
+      "Learn about Las Olas—37 beachfront apartments in Eagle Beach, Aruba, offering modern condo-hotel comforts, full kitchens, and concierge service steps from the sand.",
+    url: "/about",
+    type: "website",
+  },
+  alternates: { canonical: "/about" },
 };
 
 const values = [

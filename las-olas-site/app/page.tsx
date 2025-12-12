@@ -14,6 +14,22 @@ export const metadata: Metadata = {
   title: "Eagle Beach Apartments in Aruba | Beachfront Vacation Rentals",
   description:
     "Las Olas offers 37 beachfront vacation rentals in Eagle Beach, Aruba—modern condos with full kitchens, balconies, and concierge-level service steps from the shore.",
+  openGraph: {
+    title: "Eagle Beach Apartments in Aruba | Beachfront Vacation Rentals",
+    description:
+      "Las Olas offers 37 beachfront vacation rentals in Eagle Beach, Aruba—modern condos with full kitchens, balconies, and concierge-level service steps from the shore.",
+    url: "/",
+    type: "website",
+    images: [
+      {
+        url: "/images/eagle-beach-hero.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Beachfront apartments at Las Olas, Eagle Beach Aruba",
+      },
+    ],
+  },
+  alternates: { canonical: "/" },
 };
 
 const highlights = [

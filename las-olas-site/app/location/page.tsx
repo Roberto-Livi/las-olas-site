@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Eagle Beach Aruba Location | Las Olas Apartments",
   description:
     "Find Las Olas on Eagle Beach, Aruba. Two-minute walk to the sand, near dining, groceries, Palm Beach nightlife, casinos, and golf—ideal for beachfront vacation rentals.",
+  openGraph: {
+    title: "Eagle Beach Aruba Location | Las Olas Apartments",
+    description:
+      "Find Las Olas on Eagle Beach, Aruba. Two-minute walk to the sand, near dining, groceries, Palm Beach nightlife, casinos, and golf—ideal for beachfront vacation rentals.",
+    url: "/location",
+    type: "website",
+  },
+  alternates: { canonical: "/location" },
 };
 
 const highlights = [

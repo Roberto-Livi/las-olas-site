@@ -18,8 +18,28 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.lasolasaruba.com"),
   title: "Las Olas Condominiums – Eagle Beach, Aruba | Steps from #3 Beach in the World",
   description: "Beachfront condo-hotel at Eagle Beach, Aruba—2 minutes to Tripadvisor’s #3 beach in the world.",
+  openGraph: {
+    title: "Las Olas Condominiums – Eagle Beach, Aruba | Steps from #3 Beach in the World",
+    description:
+      "Beachfront condo-hotel at Eagle Beach, Aruba—modern apartments with balconies, full kitchens, and concierge service.",
+    url: "https://www.lasolasaruba.com",
+    siteName: "Las Olas Condominiums",
+    type: "website",
+    images: [
+      {
+        url: "/images/eagle-beach-hero.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Las Olas Condominiums at Eagle Beach, Aruba",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://www.lasolasaruba.com",
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +49,7 @@ export default function RootLayout({
 }>) {
   const lodgingJsonLd = {
     "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
+    "@type": "Hotel",
     name: "Las Olas Condominiums at Eagle Beach",
     url: "https://www.lasolasaruba.com",
     telephone: "+297-741-1234",
@@ -51,6 +71,20 @@ export default function RootLayout({
     image: ["https://www.lasolasaruba.com/images/eagle-beach-hero.jpg"],
   };
 
+  const vacationRentalJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VacationRental",
+    name: "Las Olas Beachfront Apartments – Eagle Beach, Aruba",
+    url: "https://www.lasolasaruba.com",
+    address: lodgingJsonLd.address,
+    geo: lodgingJsonLd.geo,
+    telephone: lodgingJsonLd.telephone,
+    numberOfRooms: 37,
+    checkinTime: lodgingJsonLd.checkinTime,
+    checkoutTime: lodgingJsonLd.checkoutTime,
+    image: lodgingJsonLd.image,
+  };
+
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
@@ -61,6 +95,12 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingJsonLd) }}
+        />
+        <Script
+          id="ld-vacation-rental"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(vacationRentalJsonLd) }}
         />
         <LoadingOverlay />
         <SiteShell>{children}</SiteShell>

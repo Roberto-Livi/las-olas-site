@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Las Olas Gallery | Eagle Beach Aruba Apartments",
   description:
     "Explore Las Olas in pictures—Eagle Beach Aruba apartments, pool, building, and shoreline views from our beachfront vacation rentals.",
+  openGraph: {
+    title: "Las Olas Gallery | Eagle Beach Aruba Apartments",
+    description:
+      "Explore Las Olas in pictures—Eagle Beach Aruba apartments, pool, building, and shoreline views from our beachfront vacation rentals.",
+    url: "/gallery",
+    type: "website",
+  },
+  alternates: { canonical: "/gallery" },
 };
 
 const sections = [

@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Guest Reviews | Las Olas Eagle Beach Apartments",
   description:
     "Read guest reviews of Las Olas Eagle Beach apartments in Aruba—beachfront vacation rentals with concierge service, pool, and 2-minute walk to the sand.",
+  openGraph: {
+    title: "Guest Reviews | Las Olas Eagle Beach Apartments",
+    description:
+      "Read guest reviews of Las Olas Eagle Beach apartments in Aruba—beachfront vacation rentals with concierge service, pool, and 2-minute walk to the sand.",
+    url: "/reviews",
+    type: "website",
+  },
+  alternates: { canonical: "/reviews" },
 };
 
 const testimonials = [
