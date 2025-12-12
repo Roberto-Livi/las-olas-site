@@ -64,10 +64,6 @@ export function ResidenceCard({
             className={`object-cover transition-all duration-800 ease-[cubic-bezier(0.18,0.6,0.32,1.0)] ${
               imgLoaded ? "opacity-100 scale-[1.01]" : "opacity-0 scale-[1.04]"
             }`}
-            onLoadingComplete={() => {
-              setLoading(false);
-              setImgLoaded(true);
-            }}
             onLoad={() => {
               setLoading(false);
               setImgLoaded(true);

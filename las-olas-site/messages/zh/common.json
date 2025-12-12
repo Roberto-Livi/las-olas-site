@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "首页",
+    "eagleBeach": "老鹰海滩",
+    "residences": "公寓",
+    "amenities": "配套",
+    "location": "位置",
+    "gallery": "图库",
+    "faq": "常见问答",
+    "contact": "联系",
+    "bookNow": "立即预订"
+  },
+  "hero": {
+    "badge": "阿鲁巴 · 老鹰海滩",
+    "title": "阿鲁巴老鹰海滩公寓——重新定义的海滨生活。",
+    "subtitle": "猫途鹰2025旅行者之选 · 世界第3海滩",
+    "description": "Las Olas 豪华公寓式酒店距离老鹰海滩仅数步之遥。建筑的宁静与岛屿的轻松相遇——豪华公寓、精致礼宾服务，加勒比最受欢迎的海岸就在门口。",
+    "distance": "步行2分钟即达老鹰海滩。",
+    "checkIn": "入住",
+    "checkOut": "退房",
+    "guests": "入住人数",
+    "viewAvailability": "查看空房"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "eagleBeach": "Eagle Beach",
+    "residences": "Residenze",
+    "amenities": "Servizi",
+    "location": "Posizione",
+    "gallery": "Galleria",
+    "faq": "FAQ",
+    "contact": "Contatti",
+    "bookNow": "Prenota ora"
+  },
+  "hero": {
+    "badge": "Aruba · Eagle Beach",
+    "title": "Appartamenti a Eagle Beach, Aruba—vita fronte mare reimmaginata.",
+    "subtitle": "Tripadvisor Travelers' Choice 2025 · 3ª spiaggia al mondo",
+    "description": "Las Olas è un condo-hotel di lusso a pochi passi da Eagle Beach. Calma architettonica e atmosfera isolana—residenze di pregio, ospitalità elevata e la costa caraibica più amata a portata di mano.",
+    "distance": "A soli 2 minuti a piedi da Eagle Beach.",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "guests": "Ospiti",
+    "viewAvailability": "Vedi disponibilità"
+  }
+}

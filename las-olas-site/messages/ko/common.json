@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "홈",
+    "eagleBeach": "이글 비치",
+    "residences": "레지던스",
+    "amenities": "편의시설",
+    "location": "위치",
+    "gallery": "갤러리",
+    "faq": "FAQ",
+    "contact": "문의",
+    "bookNow": "지금 예약"
+  },
+  "hero": {
+    "badge": "아루바 · 이글 비치",
+    "title": "아루바 이글 비치 아파트—해변 라이프를 새롭게.",
+    "subtitle": "트립어드바이저 트래블러스 초이스 2025 · 세계 3위 해변",
+    "description": "Las Olas는 이글 비치에서 몇 걸음 떨어진 럭셔리 콘도-호텔입니다. 건축적 차분함과 섬의 여유—고급 레지던스, 컨시어지 서비스, 사랑받는 카리브 해변이 바로 앞에 있습니다.",
+    "distance": "이글 비치까지 도보 2분.",
+    "checkIn": "체크인",
+    "checkOut": "체크아웃",
+    "guests": "투숙 인원",
+    "viewAvailability": "예약 가능 여부 보기"
+  }
+}

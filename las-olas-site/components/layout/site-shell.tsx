@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -74,7 +74,9 @@ export function SiteShell({ children }: SiteShellProps) {
 
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-2.5 md:gap-3 pr-3 sm:pr-4">
             <div className="hidden xl:block">
-              <LanguageSwitcher compact />
+              <Suspense fallback={null}>
+                <LanguageSwitcher compact />
+              </Suspense>
             </div>
             <Button
               asChild
@@ -123,7 +125,9 @@ export function SiteShell({ children }: SiteShellProps) {
             </div>
             <div className="border-t border-teal-100/80 px-5 py-3">
               <div className="pb-3 flex items-center justify-start">
-                <LanguageSwitcher compact tone="light" />
+                <Suspense fallback={null}>
+                  <LanguageSwitcher compact tone="light" />
+                </Suspense>
               </div>
               <nav className="flex flex-col text-base text-teal-900 leading-relaxed">
                 {navLinks.map((item) => (

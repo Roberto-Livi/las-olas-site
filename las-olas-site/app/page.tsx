@@ -47,72 +47,54 @@ const highlights = [
   },
 ];
 
+const suiteImages = [
+  "/images/residences/studio/studio-apartment-1.jpg",
+  "/images/residences/studio/studio-apartment-2.jpg",
+  "/images/residences/studio/studio-apartment-3.jpg",
+];
+
 const suites = [
   {
     title: "Studio Apartment",
     sleeps: "Sleeps 2",
     copy: "Streamlined studio with full kitchen, seating area, and private balcony or terrace—perfect for solo stays or couples.",
     highlights: ["Full kitchen", "Balcony/terrace", "Open layout"],
-    gallery: [
-      "/images/residences/studio/studio-apartment-1.jpg",
-      "/images/residences/studio/studio-apartment-2.jpg",
-      "/images/residences/studio/studio-apartment-3.jpg",
-    ],
+    gallery: suiteImages,
   },
   {
     title: "One Bedroom Apartment",
     sleeps: "Sleeps 2–4",
     copy: "Full kitchen, living with sofa bed, balcony/terrace, and a serene bedroom for couples or small families.",
     highlights: ["Full kitchen", "Balcony/terrace", "Sofa bed"],
-    gallery: [
-      "/images/residences/one-bedroom-apartment-1.jpg",
-      "/images/residences/one-bedroom-apartment-2.jpg",
-      "/images/residences/one-bedroom-apartment-3.jpg",
-    ],
+    gallery: suiteImages,
   },
   {
     title: "One Bedroom Suite",
     sleeps: "Sleeps 2–4",
     copy: "Expanded living area, elevated finishes, fully equipped kitchen, and private balcony for an elevated stay.",
     highlights: ["Expanded living", "Upgraded finishes", "Private balcony"],
-    gallery: [
-      "/images/residences/one-bedroom-suite-1.jpg",
-      "/images/residences/one-bedroom-suite-2.jpg",
-      "/images/residences/one-bedroom-suite-3.jpg",
-    ],
+    gallery: suiteImages,
   },
   {
     title: "Two Bedroom Apartment",
     sleeps: "Sleeps 4–6",
     copy: "Two bedrooms, two baths, dining area, full kitchen, and terrace—ideal for families or groups.",
     highlights: ["Two bathrooms", "Dining area", "Balcony/terrace"],
-    gallery: [
-      "/images/residences/two-bedroom-apartment-1.jpg",
-      "/images/residences/two-bedroom-apartment-2.jpg",
-      "/images/residences/two-bedroom-apartment-3.jpg",
-    ],
+    gallery: suiteImages,
   },
   {
     title: "Three Bedroom Apartment",
     sleeps: "Sleeps 6–8",
     copy: "Generous living and dining spaces, multiple baths, full kitchen, and balcony for larger gatherings.",
     highlights: ["Multiple baths", "Generous dining", "Balcony/terrace"],
-    gallery: [
-      "/images/residences/three-bedroom-apartment-1.jpg",
-      "/images/residences/three-bedroom-apartment-2.jpg",
-      "/images/residences/three-bedroom-apartment-3.jpg",
-    ],
+    gallery: suiteImages,
   },
   {
     title: "Three Bedroom Penthouse",
     sleeps: "Sleeps 6–8",
     copy: "Top-floor views, expansive open layout, upgraded finishes, and a private terrace for elevated privacy.",
     highlights: ["Top-floor views", "Open layout", "Private terrace"],
-    gallery: [
-      "/images/residences/three-bedroom-penthouse-1.jpg",
-      "/images/residences/three-bedroom-penthouse-2.jpg",
-      "/images/residences/three-bedroom-penthouse-3.jpg",
-    ],
+    gallery: suiteImages,
   },
 ];
 
