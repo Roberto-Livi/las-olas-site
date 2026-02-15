@@ -66,7 +66,7 @@ function DesktopWidget() {
             <Field label="Guests" value="2 adults" />
           </div>
 
-          <div className="flex flex-col items-end gap-1.5">
+          <div className="flex flex-col items-center gap-1.5">
             <Button className="flex-none rounded-[14px] bg-teal-800/90 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_16px_46px_-34px_rgba(0,0,0,0.82)] ring-1 ring-teal-100/55 hover:bg-teal-900">
               Check availability
             </Button>
