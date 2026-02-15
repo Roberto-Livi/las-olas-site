@@ -9,6 +9,8 @@ import { IntroOverlay } from "@/components/intro/intro-overlay";
 import { ScrollIndicator } from "@/components/hero/scroll-indicator";
 import { MobileScrollIndicator } from "@/components/hero/mobile-scroll-indicator";
 import { HeroVideo } from "@/components/hero/hero-video";
+import { HeroStickyCta } from "@/components/hero/hero-sticky-cta";
+import { Award, BadgeCheck, Globe2 } from "lucide-react";
 import "./hero-overrides.css";
 
 export const metadata: Metadata = {
@@ -133,7 +135,7 @@ export default function Home() {
     <div className="space-y-24 lg:space-y-32">
       {/* <IntroOverlay /> */}
       {/* CALM, LUXURY HERO */}
-      <section className="relative isolate min-h-screen w-full bg-charcoal pt-8 sm:pt-12 lg:pt-16">
+      <section id="hero" className="relative isolate min-h-screen w-full bg-charcoal pt-8 sm:pt-12 lg:pt-16">
         {/* Background media */}
         <div className="absolute inset-0">
           <HeroVideo poster="/images/eagle-beach-hero.jpg" src="/videos/las-olas-intro.mp4" />
@@ -154,8 +156,9 @@ export default function Home() {
         </div>
 
         {/* Main text container above overlay */}
-        {/* Mobile-first hero (unapologetically minimal) */}
-        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-16 pb-8 space-y-4 text-center flex min-h-screen flex-col items-center justify-start">
+        {/* MOBILE */}
+        {/* MOBILE */}
+        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-16 pb-10 space-y-4 text-center flex min-h-screen flex-col items-center justify-start">
           <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.85 mx-auto">
             <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[10px] bg-white/8 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
               <span className="h-px w-3.5 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
@@ -163,27 +166,35 @@ export default function Home() {
               <span className="h-px w-3 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
             </div>
           </div>
-          <div className="space-y-1.8 pt-1.4 pb-0.3">
-            <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12] mb-5">
-              Eagle Beach apartments in Aruba—beachfront living, reimagined.
+          <div className="space-y-2.5 pt-1.4 pb-0.3">
+            <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
+              The most refined stay near Eagle Beach.
             </h1>
-            <p className="text-[10.1px] uppercase tracking-[0.11em] text-white/76 mb-5.5">
-              Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
+            <p className="text-[12px] text-white/82 leading-relaxed">
+              Luxury residences with hotel-level service — just a 2-minute stroll from Aruba’s iconic shoreline.
             </p>
-            <p className="max-w-lg mx-auto text-[12.5px] text-white/78 leading-relaxed mb-0.5">
-              Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
-            </p>
+            {/* BADGE POLISH */}
+            <ul className="flex flex-wrap items-center justify-center gap-1.5 pt-2 text-[9.5px] uppercase tracking-[0.18em] text-white/75">
+              <li className="inline-flex items-center gap-1 rounded-full bg-white/8 px-2.5 py-1 ring-1 ring-white/12">
+                <Award className="h-3.5 w-3.5" aria-hidden /> Travelers’ Choice 2025
+              </li>
+              <li className="inline-flex items-center gap-1 rounded-full bg-white/8 px-2.5 py-1 ring-1 ring-white/12">
+                <Globe2 className="h-3.5 w-3.5" aria-hidden /> Eagle Beach: #3 Beach Worldwide
+              </li>
+              <li className="inline-flex items-center gap-1 rounded-full bg-white/8 px-2.5 py-1 ring-1 ring-white/12">
+                <BadgeCheck className="h-3.5 w-3.5" aria-hidden /> Best rate guaranteed
+              </li>
+            </ul>
           </div>
-          <p className="text-[12px] text-white/88 mt-0 mb-1.5">Just a 2-minute stroll from Eagle Beach.</p>
-          <div className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
+          <div id="booking-widget" className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
             <BookingHeroWidget variant="mobile" />
           </div>
           <MobileScrollIndicator className="mt-19" />
         </div>
 
-        {/* Tablet/desktop hero */}
-        <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-7 sm:pt-9 lg:pt-12 pb-16 sm:pb-20 lg:pb-24">
-          <div className="hero-stack flex min-h-[54vh] sm:min-h-[62vh] md:min-h-[70vh] flex-col items-center justify-center text-center gap-3 sm:gap-4 md:gap-4.5">
+        {/* DESKTOP */}
+        <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-9 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24">
+          <div className="hero-stack flex min-h-[58vh] sm:min-h-[66vh] md:min-h-[72vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-5.5">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
               <div className="inline-flex items-center gap-4 rounded-[12px] bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
                 <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
@@ -192,22 +203,31 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="space-y-3 sm:space-y-3.5">
-              <h1 className="hero-headline hero-fade-soft text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light md:font-normal tracking-tight text-white leading-[1.1] sm:leading-[1.08] md:leading-[1.06] lg:leading-[1.04]">
-                Eagle Beach apartments in Aruba—beachfront living, reimagined.
+            <div className="relative space-y-3.5 sm:space-y-4">
+              {/* DESKTOP REFINEMENT */}
+              <div className="absolute inset-x-[-6%] -top-7 -z-10 h-24 rounded-[999px] bg-gradient-to-r from-teal-900/18 via-white/10 to-amber-200/16 blur-2xl" />
+              <div className="absolute inset-x-[-12%] -top-10 -z-20 h-36 rounded-[999px] bg-gradient-to-b from-black/25 via-black/8 to-transparent blur-3xl" />
+              <h1 className="hero-headline hero-fade-soft max-w-[18ch] text-[44px] sm:text-[52px] md:text-[58px] lg:text-[60px] font-light md:font-normal tracking-tight text-white leading-[1.06] sm:leading-[1.04]">
+                The most refined stay near Eagle Beach.
               </h1>
-              <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-white/78">
-                Tripadvisor Travelers&apos; Choice 2025 · #3 Beach Worldwide
+              <p className="mx-auto max-w-[38rem] text-sm sm:text-base md:text-lg text-white/82 leading-relaxed">
+                Luxury residences with hotel-level service — just a 2-minute stroll from Aruba’s iconic shoreline.
               </p>
+              {/* BADGE POLISH */}
+              <ul className="flex flex-wrap items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/75">
+                <li className="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 ring-1 ring-white/12">
+                  <Award className="h-4 w-4" aria-hidden /> Travelers’ Choice 2025
+                </li>
+                <li className="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 ring-1 ring-white/12">
+                  <Globe2 className="h-4 w-4" aria-hidden /> Eagle Beach: #3 Beach Worldwide
+                </li>
+                <li className="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 ring-1 ring-white/12">
+                  <BadgeCheck className="h-4 w-4" aria-hidden /> Best rate guaranteed
+                </li>
+              </ul>
             </div>
 
-            <p className="mt-2 max-w-2xl mx-auto text-center text-sm sm:text-base md:text-lg text-white/85 leading-relaxed drop-shadow font-light tracking-wide">
-              Las Olas is a luxury condo-hotel steps from Eagle Beach. Architectural calm meets island ease—luxury residences, elevated hospitality, and the Caribbean's most beloved shoreline at your door.
-            </p>
-
-            <p className="text-xs sm:text-sm text-white/78">Just a 2-minute stroll from Eagle Beach.</p>
-
-            <div className="mt-4 sm:mt-5 w-full px-4 sm:px-2 hero-fade-soft-delayed">
+            <div className="mt-5 sm:mt-6 w-full px-4 sm:px-2 hero-fade-soft-delayed">
               <BookingHeroWidget variant="desktop" />
             </div>
           </div>
@@ -215,6 +235,39 @@ export default function Home() {
           <ScrollIndicator />
         </div>
       </section>
+
+      {/* NEW */}
+      <section
+        aria-label="Key benefits"
+        className="relative -mt-6 sm:-mt-12 z-10"
+      >
+        <div className="mx-auto grid max-w-6xl gap-4 px-4 pb-6 sm:grid-cols-3 sm:gap-5 sm:px-6 lg:px-8">
+          {[
+            {
+              title: "2-minute walk to Eagle Beach",
+              body: "Step onto the boardwalk and reach Aruba’s most iconic shoreline in minutes.",
+            },
+            {
+              title: "Residences, not rooms",
+              body: "Full kitchens, living space, and balconies so your stay feels like home.",
+            },
+            {
+              title: "Hotel-level care",
+              body: "Concierge-style service with the privacy and calm of a luxury residence.",
+            },
+          ].map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl border border-white/70 bg-white/90 p-5 text-charcoal shadow-[0_16px_40px_-30px_rgba(15,23,42,0.45)] backdrop-blur"
+            >
+              <h3 className="font-display text-lg text-charcoal">{item.title}</h3>
+              <p className="mt-2 text-sm text-charcoal/70">{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <HeroStickyCta />
 
       <section
         id="eagle-beach"
