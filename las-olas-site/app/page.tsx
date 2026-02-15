@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { SectionReveal } from "@/components/animations/section-reveal";
 import { Button } from "@/components/ui/button";
 import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { ResidenceCard } from "@/components/residences/residence-card";
@@ -135,16 +136,7 @@ export default function Home() {
       <section className="relative isolate min-h-screen w-full bg-charcoal pt-8 sm:pt-12 lg:pt-16">
         {/* Background media */}
         <div className="absolute inset-0">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster="/images/eagle-beach-hero.jpg"
-          >
-            <source src="/videos/las-olas-intro.mp4" type="video/mp4" />
-          </video>
+          <HeroVideo poster="/images/eagle-beach-hero.jpg" src="/videos/las-olas-intro.mp4" />
 
           {/* Stronger gradient overlay between media and text */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/28 via-slate-900/16 to-slate-900/0" />
@@ -232,8 +224,8 @@ export default function Home() {
           <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-teal-900/10 blur-3xl" />
           <div className="absolute right-0 -bottom-20 h-64 w-64 rounded-full bg-sand-200/70 blur-3xl" />
         </div>
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-0">
-          <div className="space-y-5">
+        <SectionReveal className="relative mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-0">
+          <SectionReveal className="space-y-5" delay={0.05}>
             <div className="inline-flex items-center gap-3 rounded-full bg-teal-900/10 px-4 py-2 text-xs uppercase tracking-[0.22em] text-teal-900 ring-1 ring-teal-900/20">
               <span className="h-px w-8 bg-teal-900/50" />
               Eagle Beach · #3 in the World
@@ -277,9 +269,9 @@ export default function Home() {
                 Learn more about Eagle Beach
               </Link>
             </div>
-          </div>
+          </SectionReveal>
 
-          <div className="relative overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-lg">
+          <SectionReveal delay={0.12} className="relative overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-lg">
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/20 opacity-70" />
             <div className="relative flex h-full flex-col justify-end p-6 text-white">
               <p className="text-lg font-semibold leading-snug drop-shadow">
@@ -287,13 +279,14 @@ export default function Home() {
               </p>
               <p className="text-sm text-white/85 drop-shadow">Awarded Best of the Best 2025</p>
             </div>
-          </div>
-        </div>
+          </SectionReveal>
+        </SectionReveal>
       </section>
 
       <section
         id="amenities"
         className="relative overflow-hidden bg-gradient-to-b from-sand-50 to-white scroll-mt-24 sm:scroll-mt-28"
+        style={{ contentVisibility: "auto", containIntrinsicSize: "1px 900px" }}
       >
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
         <div className="mx-auto max-w-6xl space-y-10 px-4 py-10 sm:px-6 lg:px-0 sm:py-12 lg:py-16">
@@ -337,6 +330,7 @@ export default function Home() {
       <section
         id="residences"
         className="space-y-10 px-4 sm:px-6 lg:px-0 max-w-6xl mx-auto scroll-mt-24 sm:scroll-mt-28"
+        style={{ contentVisibility: "auto", containIntrinsicSize: "1px 1100px" }}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-3">
@@ -366,6 +360,7 @@ export default function Home() {
               highlights={suite.highlights}
               gallery={suite.gallery}
               spanFull={index === suites.length - 1 && suites.length % 2 !== 0}
+              priority={index === 0}
             />
           ))}
         </div>
@@ -374,6 +369,7 @@ export default function Home() {
       <section
         id="location-home"
         className="relative overflow-hidden bg-gradient-to-r from-sand-50 via-white to-sand-100 scroll-mt-24 sm:scroll-mt-28"
+        style={{ contentVisibility: "auto", containIntrinsicSize: "1px 900px" }}
       >
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
         <div className="mx-auto max-w-6xl grid gap-10 px-4 py-12 sm:px-6 lg:px-0 sm:py-14 lg:py-16 lg:grid-cols-[1.05fr_0.95fr] items-center">
@@ -421,6 +417,7 @@ export default function Home() {
       <section
         id="contact"
         className="relative overflow-hidden bg-gradient-to-b from-white to-sand-50 scroll-mt-24 sm:scroll-mt-28"
+        style={{ contentVisibility: "auto", containIntrinsicSize: "1px 900px" }}
       >
         <div className="absolute inset-x-0 -top-20 h-40 bg-gradient-to-b from-sand-100/80 to-transparent pointer-events-none" />
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-0 sm:py-14 lg:py-16 space-y-8">

@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useEffect } from "react";
 
 type SiteShellProps = {
@@ -73,11 +72,6 @@ export function SiteShell({ children }: SiteShellProps) {
           </div>
 
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-2.5 md:gap-3 pr-3 sm:pr-4">
-            {/* <div className="hidden xl:block">
-              <Suspense fallback={null}>
-                <LanguageSwitcher compact />
-              </Suspense>
-            </div> */}
             <Button
               asChild
               className="inline-flex shrink-0 whitespace-nowrap rounded-full bg-gradient-to-r from-teal-900 via-teal-800 to-cyan-700 px-2.25 py-1.1 text-[10px] font-semibold text-white shadow-[0_10px_28px_-16px_rgba(0,0,0,0.45)] ring-1 ring-white/40 transition hover:-translate-y-[2px] hover:shadow-[0_16px_36px_-18px_rgba(0,0,0,0.55)] hover:brightness-110 md:px-3 md:py-1.5 md:text-[11px] lg:px-3.25 lg:py-1.75 lg:text-[11.5px] xl:px-3.5 xl:py-2 xl:text-[12px]"
@@ -124,11 +118,6 @@ export function SiteShell({ children }: SiteShellProps) {
               </button>
             </div>
             <div className="border-t border-teal-100/80 px-5 py-3">
-              {/* <div className="pb-3 flex items-center justify-start">
-                <Suspense fallback={null}>
-                  <LanguageSwitcher compact tone="light" />
-                </Suspense>
-              </div> */}
               <nav className="flex flex-col text-base text-teal-900 leading-relaxed">
                 {navLinks.map((item) => (
                   <Link

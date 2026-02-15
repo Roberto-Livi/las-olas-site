@@ -12,6 +12,7 @@ type ResidenceCardProps = {
   highlights?: string[];
   gallery?: string[];
   spanFull?: boolean;
+  priority?: boolean;
 };
 
 export function ResidenceCard({
@@ -21,6 +22,7 @@ export function ResidenceCard({
   highlights = [],
   gallery = [],
   spanFull = false,
+  priority = false,
 }: ResidenceCardProps) {
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -73,7 +75,8 @@ export function ResidenceCard({
               setImgLoaded(true);
             }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-            priority={index === 0}
+            priority={priority}
+            loading={priority ? "eager" : "lazy"}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-teal-900/12 via-transparent to-amber-300/10 mix-blend-multiply" />
         </div>
