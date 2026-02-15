@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { locales, defaultLocale } from "../../i18n";
 import { LoadingOverlay } from "@/components/ui/loading-overlay";
@@ -14,11 +13,14 @@ export const metadata: Metadata = {
 
 type LocaleLayoutProps = {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const locale = locales.includes(params.locale as any) ? (params.locale as (typeof locales)[number]) : defaultLocale;
+  const { locale: requestedLocale } = await params;
+  const locale = locales.includes(requestedLocale as any)
+    ? (requestedLocale as (typeof locales)[number])
+    : defaultLocale;
 
   let messages;
   try {
@@ -30,10 +32,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} className="overflow-x-hidden">
       <body className="bg-sand-50 text-charcoal antialiased overflow-x-hidden">
-        <NextIntlClientProvider locale={locale} messages={{ common: messages }}>
-          <LoadingOverlay />
-          <SiteShell locale={locale}>{children}</SiteShell>
-        </NextIntlClientProvider>
+        <LoadingOverlay />
+        <SiteShell locale={locale}>{children}</SiteShell>
       </body>
     </html>
   );

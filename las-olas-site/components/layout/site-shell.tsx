@@ -9,6 +9,7 @@ import { useEffect } from "react";
 
 type SiteShellProps = {
   children: React.ReactNode;
+  locale?: string;
 };
 
 const navLinks = [
