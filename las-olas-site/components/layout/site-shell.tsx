@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 type SiteShellProps = {
@@ -37,6 +37,7 @@ const desktopNavLinks = [
 
 export function SiteShell({ children }: SiteShellProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
   const mobileActionBase =
@@ -87,7 +88,22 @@ export function SiteShell({ children }: SiteShellProps) {
   };
 
   const handleNavClick = (href: string) => {
-    setCurrentHash(getHrefHash(href));
+    const hash = getHrefHash(href);
+    const basePath = href.split("#")[0] || "/";
+    const isInPageHashNav = Boolean(hash) && pathname === basePath;
+
+    if (isInPageHashNav) {
+      const target = document.getElementById(hash.slice(1));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      window.history.replaceState(null, "", `${basePath}${hash}`);
+      setCurrentHash(hash);
+    } else {
+      router.push(href);
+      setCurrentHash(hash);
+    }
+
     if (mobileOpen) setMobileOpen(false);
   };
 
@@ -112,7 +128,10 @@ export function SiteShell({ children }: SiteShellProps) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => handleNavClick(item.href)}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleNavClick(item.href);
+                  }}
                   className={`nav-link-glow group relative px-1.5 pb-1 transition hover:text-teal-900 whitespace-nowrap ${
                     isActive(item.href) ? "text-teal-900 font-semibold" : ""
                   }`}
@@ -197,16 +216,19 @@ export function SiteShell({ children }: SiteShellProps) {
                 <nav className="flex flex-col gap-1.5" aria-label="Primary navigation">
                   {primaryNavLinks.map((item, index) => (
                     <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`menu-item-enter group relative flex min-h-12 items-center rounded-xl py-3 pl-4 pr-3 text-[17px] leading-tight text-teal-950/92 transition active:translate-x-[1px] active:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-900/45 ${
-                        isActive(item.href)
-                          ? "bg-teal-900/[0.07] text-teal-950"
-                          : "hover:bg-teal-900/[0.05] active:bg-teal-900/[0.08]"
-                      }`}
-                      onClick={() => handleNavClick(item.href)}
-                      style={{ animationDelay: `${70 + index * 28}ms` }}
-                    >
+                    key={item.href}
+                    href={item.href}
+                    className={`menu-item-enter group relative flex min-h-12 items-center rounded-xl py-3 pl-4 pr-3 text-[17px] leading-tight text-teal-950/92 transition active:translate-x-[1px] active:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-900/45 ${
+                      isActive(item.href)
+                        ? "bg-teal-900/[0.07] text-teal-950"
+                        : "hover:bg-teal-900/[0.05] active:bg-teal-900/[0.08]"
+                    }`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handleNavClick(item.href);
+                    }}
+                    style={{ animationDelay: `${70 + index * 28}ms` }}
+                  >
                       <span
                         className={`absolute left-1.5 top-2 bottom-2 w-[2px] rounded-full transition ${
                           isActive(item.href) ? "bg-teal-800/70" : "bg-transparent group-hover:bg-teal-800/30"
@@ -223,16 +245,19 @@ export function SiteShell({ children }: SiteShellProps) {
                 <nav className="flex flex-col gap-1.5" aria-label="Secondary navigation">
                   {secondaryNavLinks.map((item, index) => (
                     <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`menu-item-enter group relative flex min-h-11 items-center rounded-xl py-2.5 pl-4 pr-3 text-[15px] text-teal-950/88 transition active:translate-x-[1px] active:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-900/45 ${
-                        isActive(item.href)
-                          ? "bg-teal-900/[0.07] text-teal-950"
-                          : "hover:bg-teal-900/[0.05] active:bg-teal-900/[0.08]"
-                      }`}
-                      onClick={() => handleNavClick(item.href)}
-                      style={{ animationDelay: `${230 + index * 28}ms` }}
-                    >
+                    key={item.href}
+                    href={item.href}
+                    className={`menu-item-enter group relative flex min-h-11 items-center rounded-xl py-2.5 pl-4 pr-3 text-[15px] text-teal-950/88 transition active:translate-x-[1px] active:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-900/45 ${
+                      isActive(item.href)
+                        ? "bg-teal-900/[0.07] text-teal-950"
+                        : "hover:bg-teal-900/[0.05] active:bg-teal-900/[0.08]"
+                    }`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handleNavClick(item.href);
+                    }}
+                    style={{ animationDelay: `${230 + index * 28}ms` }}
+                  >
                       <span
                         className={`absolute left-1.5 top-2 bottom-2 w-[2px] rounded-full transition ${
                           isActive(item.href) ? "bg-teal-800/70" : "bg-transparent group-hover:bg-teal-800/30"
