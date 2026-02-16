@@ -138,7 +138,11 @@ export default function Home() {
       <section id="hero" className="relative isolate min-h-screen w-full bg-charcoal pt-8 sm:pt-12 lg:pt-16">
         {/* Background media */}
         <div className="absolute inset-0">
-          <HeroVideo poster="/images/eagle-beach-hero.jpg" src="/videos/las-olas-intro.mp4" />
+          <HeroVideo
+            poster="/images/eagle-beach-hero.jpg"
+            src="/videos/las-olas-intro.mp4"
+            mobileSrc="/videos/las-olas-intro-720p.mp4"
+          />
 
           {/* Stronger gradient overlay between media and text */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/28 via-slate-900/16 to-slate-900/0" />
