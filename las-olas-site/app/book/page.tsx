@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 };
 
 const sharedGallery = [
-  "/images/residences/studio/studio-apartment-1.jpg",
-  "/images/residences/studio/studio-apartment-2.jpg",
-  "/images/residences/studio/studio-apartment-3.jpg",
+  "/images/residences/studio/studio-apartment-1-1600.jpg",
+  "/images/residences/studio/studio-apartment-2-1600.jpg",
+  "/images/residences/studio/studio-apartment-3-1600.jpg",
 ];
 
 const categories = [

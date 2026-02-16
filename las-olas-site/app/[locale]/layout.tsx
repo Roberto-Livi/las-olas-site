@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 import { locales, defaultLocale } from "../../i18n";
-import { LoadingOverlay } from "@/components/ui/loading-overlay";
 import { SiteShell } from "@/components/layout/site-shell";
 import "../globals.css";
 
@@ -32,7 +31,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <html lang={locale} className="overflow-x-hidden">
       <body className="bg-sand-50 text-charcoal antialiased overflow-x-hidden">
-        <LoadingOverlay />
         <SiteShell locale={locale}>{children}</SiteShell>
       </body>
     </html>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import { SiteShell } from "@/components/layout/site-shell";
-import { LoadingOverlay } from "@/components/ui/loading-overlay";
 import "./globals.css";
 
 const inter = Inter({
@@ -102,7 +101,6 @@ export default function RootLayout({
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(vacationRentalJsonLd) }}
         />
-        <LoadingOverlay />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

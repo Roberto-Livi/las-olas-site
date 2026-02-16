@@ -161,7 +161,6 @@ export function SiteShell({ children }: SiteShellProps) {
                 fill
                 sizes="176px"
                 className="object-contain"
-                priority
               />
             </div>
             <div className="text-sm text-charcoal/70">

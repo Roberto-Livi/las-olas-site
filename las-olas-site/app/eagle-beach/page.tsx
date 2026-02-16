@@ -38,7 +38,7 @@ export default function EagleBeachPage() {
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-center opacity-70"
-            style={{ backgroundImage: "url('/images/eagle-beach-hero.jpg')" }}
+            style={{ backgroundImage: "url('/images/eagle-beach-hero-1920.jpg')" }}
             aria-hidden
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-charcoal/80" />

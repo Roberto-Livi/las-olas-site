@@ -39,7 +39,10 @@ export default function AboutPage() {
             Modern condo-hotel living steps from Eagle Beach, Aruba.
           </p>
           <div className="mt-6 h-56 w-full overflow-hidden rounded-3xl bg-cover bg-center shadow-lg ring-1 ring-sand-200"
-            style={{ backgroundImage: "linear-gradient(135deg, rgba(15,118,110,0.08), rgba(230,212,189,0.2)), url('/images/eagle-beach-hero.jpg')" }}
+            style={{
+              backgroundImage:
+                "linear-gradient(135deg, rgba(15,118,110,0.08), rgba(230,212,189,0.2)), url('/images/eagle-beach-hero-1920.jpg')",
+            }}
           />
         </div>
       </section>

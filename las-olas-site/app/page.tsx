@@ -51,9 +51,9 @@ const highlights = [
 ];
 
 const suiteImages = [
-  "/images/residences/studio/studio-apartment-1.jpg",
-  "/images/residences/studio/studio-apartment-2.jpg",
-  "/images/residences/studio/studio-apartment-3.jpg",
+  "/images/residences/studio/studio-apartment-1-1600.jpg",
+  "/images/residences/studio/studio-apartment-2-1600.jpg",
+  "/images/residences/studio/studio-apartment-3-1600.jpg",
 ];
 
 const suites = [
@@ -139,7 +139,7 @@ export default function Home() {
         {/* Background media */}
         <div className="absolute inset-0">
           <HeroVideo
-            poster="/images/eagle-beach-hero.jpg"
+            poster="/images/eagle-beach-hero-1920.jpg"
             src="/videos/las-olas-intro.mp4"
             mobileSrc="/videos/las-olas-intro-720p.mp4"
           />

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type HeroVideoProps = {
@@ -10,6 +11,7 @@ type HeroVideoProps = {
 
 export function HeroVideo({ poster, src, mobileSrc }: HeroVideoProps) {
   const [isReady, setIsReady] = useState(false);
+  const [showPoster, setShowPoster] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const readyRef = useRef(false);
 
@@ -21,6 +23,26 @@ export function HeroVideo({ poster, src, mobileSrc }: HeroVideoProps) {
   };
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const connection = (navigator as Navigator & { connection?: { effectiveType?: string; saveData?: boolean } })
+      .connection;
+    const saveData = connection?.saveData === true;
+
+    if (prefersReducedMotion || saveData) {
+      setShowPoster(true);
+      return;
+    }
+
+    const posterFallbackTimeout = window.setTimeout(() => {
+      if (!readyRef.current) setShowPoster(true);
+    }, 350);
+
+    return () => {
+      window.clearTimeout(posterFallbackTimeout);
+    };
+  }, []);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
@@ -28,7 +50,8 @@ export function HeroVideo({ poster, src, mobileSrc }: HeroVideoProps) {
       try {
         await video.play();
       } catch {
-        // Autoplay might be blocked; the poster remains until user interaction.
+        // Autoplay might be blocked; show image fallback.
+        setShowPoster(true);
       }
     };
 
@@ -43,23 +66,25 @@ export function HeroVideo({ poster, src, mobileSrc }: HeroVideoProps) {
 
   return (
     <div className="absolute inset-0">
-      <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${
-          isReady ? "opacity-0" : "opacity-100"
-        }`}
-        style={{ backgroundImage: `url(${poster})` }}
-        aria-hidden
-      />
+      {showPoster && !isReady ? (
+        <Image
+          src={poster}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      ) : null}
       <video
         ref={videoRef}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
           isReady ? "opacity-100" : "opacity-0"
         }`}
         autoPlay
         muted
         loop
         playsInline
-        poster={poster}
         preload="auto"
         onLoadedMetadata={markReady}
         onLoadedData={markReady}
