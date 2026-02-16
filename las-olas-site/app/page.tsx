@@ -9,7 +9,6 @@ import { IntroOverlay } from "@/components/intro/intro-overlay";
 import { ScrollIndicator } from "@/components/hero/scroll-indicator";
 import { MobileScrollIndicator } from "@/components/hero/mobile-scroll-indicator";
 import { HeroVideo } from "@/components/hero/hero-video";
-import { HeroStickyCta } from "@/components/hero/hero-sticky-cta";
 import { Award, BadgeCheck, Globe2 } from "lucide-react";
 import "./hero-overrides.css";
 
@@ -270,8 +269,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <HeroStickyCta />
 
       <section
         id="eagle-beach"
