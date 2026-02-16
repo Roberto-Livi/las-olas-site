@@ -1,11 +1,10 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
 
 type SiteShellProps = {
   children: React.ReactNode;
@@ -26,12 +25,40 @@ const navLinks = [
 export function SiteShell({ children }: SiteShellProps) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState("");
   const mobileActionBase =
     "inline-flex h-7 items-center justify-center rounded-full px-2 text-[10px] font-semibold tracking-[0.01em] whitespace-nowrap transition cursor-pointer";
 
+  useEffect(() => {
+    const syncHash = () => setCurrentHash(window.location.hash || "");
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, [pathname]);
+
+  const getHrefHash = (href: string) => {
+    const hashIndex = href.indexOf("#");
+    if (hashIndex === -1) return "";
+    return `#${href.slice(hashIndex + 1)}`;
+  };
+
   const isActive = (href: string) => {
-    if (href.startsWith("#")) return false;
+    const hash = getHrefHash(href);
+    if (hash) {
+      const basePath = href.split("#")[0] || "/";
+      return pathname === basePath && currentHash === hash;
+    }
+
+    if (href === "/") {
+      return pathname === "/" && currentHash === "";
+    }
+
     return pathname === href;
+  };
+
+  const handleNavClick = (href: string) => {
+    setCurrentHash(getHrefHash(href));
+    if (mobileOpen) setMobileOpen(false);
   };
 
   return (
@@ -55,6 +82,7 @@ export function SiteShell({ children }: SiteShellProps) {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => handleNavClick(item.href)}
                   className={`nav-link-glow group relative px-1.5 pb-1 transition hover:text-teal-900 whitespace-nowrap ${
                     isActive(item.href) ? "text-teal-900 font-semibold" : ""
                   }`}
@@ -125,7 +153,7 @@ export function SiteShell({ children }: SiteShellProps) {
                     key={item.href}
                     href={item.href}
                     className="group px-1 py-3 tracking-[0.08em] uppercase transition hover:text-teal-700 relative"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => handleNavClick(item.href)}
                   >
                     <span className="relative inline-block">
                       {item.label}

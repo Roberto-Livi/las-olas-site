@@ -57,7 +57,7 @@ export function HeroStickyCta() {
 
       {/* DESKTOP REFINEMENT */}
       <div
-        className={`hidden sm:block fixed inset-x-0 top-3 z-40 transition duration-300 ${
+        className={`pointer-events-none hidden sm:block fixed inset-x-0 top-16 z-30 transition duration-300 ${
           showDesktop ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
       >
