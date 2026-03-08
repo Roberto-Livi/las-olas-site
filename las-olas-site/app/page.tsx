@@ -1,15 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { SectionReveal } from "@/components/animations/section-reveal";
 import { Button } from "@/components/ui/button";
-import { BookingHeroWidget } from "@/components/booking/booking-hero-widget";
 import { ResidenceCard } from "@/components/residences/residence-card";
-import { IntroOverlay } from "@/components/intro/intro-overlay";
-import { ScrollIndicator } from "@/components/hero/scroll-indicator";
-import { MobileScrollIndicator } from "@/components/hero/mobile-scroll-indicator";
-import { HeroVideo } from "@/components/hero/hero-video";
-import { Award, BadgeCheck, Globe2 } from "lucide-react";
+import { HomeHero } from "@/components/hero/home-hero";
 import "./hero-overrides.css";
 
 export const metadata: Metadata = {
@@ -33,21 +27,6 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "/" },
 };
-
-const highlights = [
-  {
-    title: "Ocean-calibrated design",
-    copy: "Calm palettes, sculpted lighting, and tactile finishes that mirror the softness of Eagle Beach.",
-  },
-  {
-    title: "Concierge-level service",
-    copy: "Private arrivals, beach setups, island transfers, and on-call hosts for anything you need.",
-  },
-  {
-    title: "Wellness-forward amenities",
-    copy: "Spa-inspired baths, sunrise yoga decks, fitness, and breezy lounges shaded by palms.",
-  },
-];
 
 const suiteImages = [
   "/images/residences/studio/studio-apartment-1-1600.jpg",
@@ -100,8 +79,6 @@ const suites = [
   },
 ];
 
-const perks = [{ label: "2-minute walk", detail: "Direct to Eagle Beach" }];
-
 const amenities = [
   {
     title: "On-Site Restaurant",
@@ -132,112 +109,7 @@ const amenities = [
 export default function Home() {
   return (
     <div className="space-y-24 lg:space-y-32">
-      {/* <IntroOverlay /> */}
-      {/* CALM, LUXURY HERO */}
-      <section id="hero" className="relative isolate min-h-screen w-full bg-charcoal pt-8 sm:pt-12 lg:pt-16">
-        {/* Background media */}
-        <div className="absolute inset-0">
-          <HeroVideo
-            poster="/images/eagle-beach-hero-1920.jpg"
-            src="/videos/las-olas-intro.mp4"
-            mobileSrc="/videos/las-olas-intro-720p.mp4"
-          />
-
-          {/* Stronger gradient overlay between media and text */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-900/28 via-slate-900/16 to-slate-900/0" />
-
-          {/* Subtle cinematic layers */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-charcoal/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(100,220,220,0.06),transparent_45%),radial-gradient(circle_at_75%_5%,rgba(255,255,255,0.06),transparent_40%)] mix-blend-overlay" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/18 via-slate-900/5 to-slate-900/28" />
-          <div className="absolute inset-0 bg-black/12 mix-blend-multiply" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-black/12 to-black/32" />
-
-          {/* Gentle orbs */}
-          <div className="absolute top-10 -left-40 h-96 w-96 rounded-full bg-gradient-to-r from-teal-500/18 to-cyan-500/12 blur-3xl opacity-40 animate-pulse-slower" />
-          <div className="absolute -bottom-20 -right-56 h-96 w-96 rounded-full bg-gradient-to-l from-orange-500/12 to-red-500/8 blur-3xl opacity-30 animate-pulse-slow" />
-        </div>
-
-        {/* Main text container above overlay */}
-        {/* MOBILE */}
-        {/* MOBILE */}
-        <div className="relative z-10 mx-auto block sm:hidden px-4 pt-16 pb-10 space-y-4 text-center flex min-h-screen flex-col items-center justify-start">
-          <div className="flex w-full max-w-[15rem] flex-col items-center gap-0.85 mx-auto">
-            <div className="inline-flex w-full items-center justify-center gap-1.1 rounded-[10px] bg-white/8 px-1.95 py-[0.3rem] text-[8.5px] uppercase tracking-[0.18em] text-white/80 ring-1 ring-white/16 backdrop-blur-2xl">
-              <span className="h-px w-3.5 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
-              Aruba · Eagle Beach
-              <span className="h-px w-3 bg-gradient-to-r from-white/0 via-white/55 to-white/0" />
-            </div>
-          </div>
-          <div className="space-y-2.5 pt-1.4 pb-0.3">
-            <h1 className="hero-fade-soft text-[25px] font-light tracking-tight text-white leading-[1.12]">
-              The most refined stay near Eagle Beach.
-            </h1>
-            <p className="text-[12px] text-white/82 leading-relaxed">
-              Luxury residences with hotel-level service — just a 2-minute stroll from Aruba’s iconic shoreline.
-            </p>
-            {/* BADGE POLISH */}
-            <ul className="flex flex-wrap items-center justify-center gap-1.5 pt-2 text-[9.5px] uppercase tracking-[0.18em] text-white/75">
-              <li className="inline-flex items-center gap-1 rounded-full bg-white/8 px-2.5 py-1 ring-1 ring-white/12">
-                <Award className="h-3.5 w-3.5" aria-hidden /> Travelers’ Choice 2025
-              </li>
-              <li className="inline-flex items-center gap-1 rounded-full bg-white/8 px-2.5 py-1 ring-1 ring-white/12">
-                <Globe2 className="h-3.5 w-3.5" aria-hidden /> Eagle Beach: #3 Beach Worldwide
-              </li>
-              <li className="inline-flex items-center gap-1 rounded-full bg-white/8 px-2.5 py-1 ring-1 ring-white/12">
-                <BadgeCheck className="h-3.5 w-3.5" aria-hidden /> Best rate guaranteed
-              </li>
-            </ul>
-          </div>
-          <div id="booking-widget" className="mx-auto w-full max-w-[22rem] hero-fade-soft-delayed mt-5">
-            <BookingHeroWidget variant="mobile" />
-          </div>
-          <MobileScrollIndicator className="mt-19" />
-        </div>
-
-        {/* DESKTOP */}
-        <div className="relative z-10 mx-auto hidden sm:block max-w-6xl px-4 sm:px-6 lg:px-8 pt-9 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24">
-          <div className="hero-stack flex min-h-[58vh] sm:min-h-[66vh] md:min-h-[72vh] flex-col items-center justify-center text-center gap-4 sm:gap-5 md:gap-5.5">
-            <div className="flex flex-col items-center gap-3 sm:gap-4">
-              <div className="inline-flex items-center gap-4 rounded-[12px] bg-white/12 px-6 py-3 text-[12px] sm:text-[13px] uppercase tracking-[0.24em] text-white/90 ring-1 ring-white/25 backdrop-blur-2xl transition-all duration-500">
-                <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
-                <span className="font-medium">Aruba · Eagle Beach</span>
-                <span className="h-px w-6 bg-gradient-to-r from-white/0 via-white/70 to-white/0" />
-              </div>
-            </div>
-
-            <div className="relative space-y-3.5 sm:space-y-4">
-              {/* DESKTOP REFINEMENT */}
-              <div className="absolute inset-x-[-6%] -top-7 -z-10 h-24 rounded-[999px] bg-gradient-to-r from-teal-900/18 via-white/10 to-amber-200/16 blur-2xl" />
-              <div className="absolute inset-x-[-12%] -top-10 -z-20 h-36 rounded-[999px] bg-gradient-to-b from-black/25 via-black/8 to-transparent blur-3xl" />
-              <h1 className="hero-headline hero-fade-soft max-w-[18ch] text-[44px] sm:text-[52px] md:text-[58px] lg:text-[60px] font-light md:font-normal tracking-tight text-white leading-[1.06] sm:leading-[1.04]">
-                The most refined stay near Eagle Beach.
-              </h1>
-              <p className="mx-auto max-w-[38rem] text-sm sm:text-base md:text-lg text-white/82 leading-relaxed">
-                Luxury residences with hotel-level service — just a 2-minute stroll from Aruba’s iconic shoreline.
-              </p>
-              {/* BADGE POLISH */}
-              <ul className="flex flex-wrap items-center justify-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/75">
-                <li className="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 ring-1 ring-white/12">
-                  <Award className="h-4 w-4" aria-hidden /> Travelers’ Choice 2025
-                </li>
-                <li className="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 ring-1 ring-white/12">
-                  <Globe2 className="h-4 w-4" aria-hidden /> Eagle Beach: #3 Beach Worldwide
-                </li>
-                <li className="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 ring-1 ring-white/12">
-                  <BadgeCheck className="h-4 w-4" aria-hidden /> Best rate guaranteed
-                </li>
-              </ul>
-            </div>
-
-            <div className="mt-5 sm:mt-6 w-full px-4 sm:px-2 hero-fade-soft-delayed">
-              <BookingHeroWidget variant="desktop" />
-            </div>
-          </div>
-
-          <ScrollIndicator />
-        </div>
-      </section>
+      <HomeHero />
 
       {/* NEW */}
       <section
@@ -435,7 +307,8 @@ export default function Home() {
               Two minutes from Eagle Beach.
             </h2>
             <p className="max-w-2xl text-base text-charcoal/75">
-              Step out of Las Olas and onto the boardwalk that leads directly to Eagle Beach—the Caribbean's #1 and the world's #3 beach. Cafés, dining, and the shoreline are all within a short stroll.
+              Step out of Las Olas and onto the boardwalk that leads directly to Eagle Beach-the Caribbean&apos;s #1 and the
+              world&apos;s #3 beach. Cafes, dining, and the shoreline are all within a short stroll.
             </p>
             <div className="grid gap-3 sm:grid-cols-3 text-sm text-charcoal/80">
               <div className="rounded-2xl border border-sand-200 bg-white/90 p-4 shadow-sm">

@@ -40,6 +40,7 @@ export function SiteShell({ children }: SiteShellProps) {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
+  const isHomeRoute = pathname === "/" || /^\/[a-z]{2}$/.test(pathname);
   const mobileActionBase =
     "inline-flex h-7 items-center justify-center rounded-full px-2 text-[10px] font-semibold tracking-[0.01em] whitespace-nowrap transition cursor-pointer";
 
@@ -109,6 +110,7 @@ export function SiteShell({ children }: SiteShellProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
+      {!isHomeRoute && (
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/70 bg-white shadow-[0_10px_28px_-24px_rgba(10,82,75,0.25)]">
         <div className="mx-auto flex max-w-6xl items-center gap-3 sm:gap-5 px-3 sm:px-4 lg:px-6 py-0.5 sm:py-1 md:py-1.5 lg:py-1.75 pt-[env(safe-area-inset-top)]">
           <Link href="/" className="flex shrink-0 items-center gap-1 sm:gap-1.5">
@@ -174,8 +176,9 @@ export function SiteShell({ children }: SiteShellProps) {
           </div>
         </div>
       </header>
+      )}
 
-      {mobileOpen && (
+      {!isHomeRoute && mobileOpen && (
         <div
           className="fixed inset-0 z-50 bg-[linear-gradient(to_bottom,rgba(9,22,28,0.52),rgba(12,20,24,0.46))] backdrop-blur-[8px] animate-[menuBackdropIn_220ms_ease-out_both]"
           onClick={() => setMobileOpen(false)}
