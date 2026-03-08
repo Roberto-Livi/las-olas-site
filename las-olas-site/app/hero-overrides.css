@@ -102,8 +102,14 @@
 /* Cinematic staged hero reveal */
 .hero-logo-reveal {
   opacity: 0;
-  animation: heroStageIn 1200ms cubic-bezier(0.2, 0.84, 0.2, 1) 80ms forwards;
+  animation: heroLogoFadeIn 900ms cubic-bezier(0.2, 0.84, 0.2, 1) 1250ms forwards;
 }
+
+.hero-logo-watermark {
+  animation: heroWatermarkResolve 1400ms cubic-bezier(0.2, 0.84, 0.2, 1) 0ms forwards;
+  transform-origin: center;
+}
+
 
 .hero-headline-reveal {
   opacity: 0;
@@ -126,6 +132,15 @@
   }
 }
 
+@keyframes heroLogoFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes heroStageUp {
   from {
     opacity: 0;
@@ -137,7 +152,33 @@
   }
 }
 
+@keyframes heroWatermarkResolve {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(1.08);
+    filter: blur(1px);
+  }
+  22% {
+    opacity: 0.17;
+  }
+  72% {
+    opacity: 0.08;
+    transform: translate3d(0, 0, 0) scale(0.84);
+    filter: blur(0.3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0) scale(0.7);
+    filter: blur(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-logo-watermark {
+    animation: none;
+    opacity: 0;
+  }
+
   .hero-logo-reveal,
   .hero-headline-reveal,
   .hero-booking-reveal {

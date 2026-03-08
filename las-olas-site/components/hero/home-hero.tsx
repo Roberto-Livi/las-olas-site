@@ -153,6 +153,16 @@ export function HomeHero() {
         </div>
       </div>
 
+      <div className="pointer-events-none absolute inset-0 z-[5] flex items-center justify-center" aria-hidden>
+        <Image
+          src="/images/las-olas-logo-white.PNG"
+          alt=""
+          width={620}
+          height={218}
+          className="hero-logo-watermark h-auto w-[68vw] max-w-[680px] opacity-0"
+        />
+      </div>
+
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-32 lg:pt-9">
         <header className="relative flex min-h-12 items-start justify-center">
           <div className="absolute left-0 top-0 flex items-center">
