@@ -114,8 +114,6 @@ export function HomeHero() {
           src="/videos/las-olas-intro.mp4"
           mobileSrc="/videos/las-olas-intro-720p.mp4"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#102034]/36 via-[#152a3d]/18 to-black/64" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/18" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-32 lg:pt-9">
@@ -167,20 +165,20 @@ export function HomeHero() {
       </div>
 
       <div className="absolute inset-x-3 bottom-3 z-20 hidden sm:inset-x-6 sm:bottom-4 lg:inset-x-10 lg:block xl:inset-x-12">
-        <div className="relative overflow-hidden rounded-[22px] border border-white/45 bg-[linear-gradient(160deg,rgba(247,248,246,0.98),rgba(233,239,236,0.96))] p-[6px] shadow-[0_26px_56px_-32px_rgba(0,0,0,0.65)] backdrop-blur-xl">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(100%_120%_at_0%_0%,rgba(255,255,255,0.72),transparent_58%),radial-gradient(65%_80%_at_100%_0%,rgba(15,118,110,0.18),transparent_62%)]" />
-          <div className="relative grid gap-[1px] rounded-[16px] bg-[#d9e0dc] sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_auto]">
+        <div className="relative overflow-hidden rounded-[26px] border border-white/55 bg-[linear-gradient(160deg,rgba(248,249,247,0.97),rgba(239,243,240,0.95))] p-2 shadow-[0_28px_60px_-36px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_0%_0%,rgba(255,255,255,0.76),transparent_58%),radial-gradient(70%_90%_at_100%_0%,rgba(15,118,110,0.14),transparent_60%)]" />
+          <div className="relative grid gap-2 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_auto]">
             {bookingFields.map((field) => (
               <button
                 key={field.value}
                 type="button"
-                className="group inline-flex min-h-[60px] cursor-pointer items-center gap-3 bg-[linear-gradient(180deg,#ffffff,#fbfcfb)] px-4 text-left text-[#38504b] transition duration-200 hover:-translate-y-[1px] hover:bg-white sm:min-h-[64px] sm:px-5"
+                className="group inline-flex min-h-[62px] cursor-pointer items-center gap-3 rounded-2xl border border-[#dfe9e4] bg-[linear-gradient(180deg,#ffffff,#f9fbfa)] px-4 text-left text-[#38504b] shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] transition duration-200 hover:-translate-y-[1px] hover:border-[#d0dfd9] hover:bg-white sm:min-h-[64px] sm:px-5"
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ebf3f0] ring-1 ring-[#d5e5e0]">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#edf4f1] ring-1 ring-[#d9e8e3]">
                   <field.icon className="h-[16px] w-[16px] text-[#0f766e]" aria-hidden />
                 </span>
                 <span className="grid gap-1">
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#7f8f8a]">{field.label}</span>
+                  <span className="text-[9px] uppercase tracking-[0.18em] text-[#83958f]">{field.label}</span>
                   <span className="text-[13px] font-medium leading-none tracking-[0.01em] text-[#324640]">
                     {field.value}
                   </span>
@@ -189,7 +187,7 @@ export function HomeHero() {
             ))}
             <button
               type="button"
-              className="col-span-1 m-[4px] inline-flex min-h-[54px] cursor-pointer items-center justify-center gap-2 rounded-[18px] bg-[linear-gradient(140deg,#0a524b,#0f766e)] px-8 text-[12px] font-semibold uppercase tracking-[0.17em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.24),0_10px_22px_-12px_rgba(8,57,53,0.72)] transition duration-200 hover:-translate-y-[1px] hover:brightness-105 sm:col-span-2 sm:min-h-[56px] lg:col-span-1 lg:min-h-[60px] lg:px-9"
+              className="col-span-1 inline-flex min-h-[58px] cursor-pointer items-center justify-center gap-2 rounded-[20px] bg-[linear-gradient(140deg,#0a524b,#0f766e)] px-8 text-[12px] font-semibold uppercase tracking-[0.16em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.24),0_12px_24px_-14px_rgba(8,57,53,0.72)] transition duration-200 hover:-translate-y-[1px] hover:brightness-105 sm:col-span-2 lg:col-span-1 lg:min-h-[64px] lg:px-9"
             >
               Search <Search className="h-[15px] w-[15px]" aria-hidden />
             </button>
