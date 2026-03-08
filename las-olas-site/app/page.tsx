@@ -130,14 +130,15 @@ export default function Home() {
               title: "Hotel-level care",
               body: "Concierge-style service with the privacy and calm of a luxury residence.",
             },
-          ].map((item) => (
-            <article
+          ].map((item, index) => (
+            <SectionReveal
               key={item.title}
+              delay={0.06 + index * 0.08}
               className="rounded-3xl border border-white/70 bg-white/90 p-5 text-charcoal shadow-[0_16px_40px_-30px_rgba(15,23,42,0.45)] backdrop-blur"
             >
               <h3 className="font-display text-lg text-charcoal">{item.title}</h3>
               <p className="mt-2 text-sm text-charcoal/70">{item.body}</p>
-            </article>
+            </SectionReveal>
           ))}
         </div>
       </section>
@@ -226,9 +227,10 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {amenities.map((item) => (
-              <div
+            {amenities.map((item, index) => (
+              <SectionReveal
                 key={item.title}
+                delay={0.04 + index * 0.06}
                 className="group relative overflow-hidden rounded-3xl border border-sand-200 bg-white/90 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative h-48 w-full overflow-hidden sm:h-56">
@@ -247,7 +249,7 @@ export default function Home() {
                   <h3 className="font-display text-xl text-charcoal">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-charcoal/75">{item.body}</p>
                 </div>
-              </div>
+              </SectionReveal>
             ))}
           </div>
         </div>

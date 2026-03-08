@@ -53,6 +53,7 @@ export function HomeHero() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [showStickyAccess, setShowStickyAccess] = useState(false);
+  const [heroScrollProgress, setHeroScrollProgress] = useState(0);
   const lockedScrollY = useRef(0);
 
   useEffect(() => {
@@ -106,14 +107,50 @@ export function HomeHero() {
     };
   }, []);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) return;
+
+    let raf = 0;
+    const updateProgress = () => {
+      const viewport = window.innerHeight || 1;
+      const progress = Math.min(1, Math.max(0, window.scrollY / (viewport * 1.2)));
+      setHeroScrollProgress(progress);
+      raf = 0;
+    };
+
+    const onScroll = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(updateProgress);
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      if (raf) window.cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-[#0b0f13] text-white">
       <div className="absolute inset-0">
-        <HeroVideo
-          poster="/images/eagle-beach-hero-1920.jpg"
-          src="/videos/las-olas-intro.mp4"
-          mobileSrc="/videos/las-olas-intro-720p.mp4"
-        />
+        <div
+          className="absolute inset-0 origin-center"
+          style={{
+            transform: `translate3d(0, ${heroScrollProgress * -10}px, 0) scale(${1 + heroScrollProgress * 0.035})`,
+            transition: "transform 180ms ease-out",
+          }}
+        >
+          <HeroVideo
+            poster="/images/eagle-beach-hero-1920.jpg"
+            src="/videos/las-olas-intro.mp4"
+            mobileSrc="/videos/las-olas-intro-720p.mp4"
+          />
+        </div>
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-32 lg:pt-9">
@@ -130,7 +167,7 @@ export function HomeHero() {
             </button>
           </div>
 
-          <div className="pointer-events-none absolute left-1/2 top-0 flex -translate-x-1/2 items-center justify-center px-2">
+          <div className="pointer-events-none absolute left-1/2 top-0 flex -translate-x-1/2 items-center justify-center px-2 hero-logo-reveal">
             <Image
               src="/images/las-olas-logo-white.PNG"
               alt="Las Olas Condominiums"
@@ -155,7 +192,7 @@ export function HomeHero() {
 
         <div className="mt-auto pb-8 sm:pb-10 lg:pb-0 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="w-full max-w-none space-y-6 lg:max-w-[980px]">
-            <h1 className="font-display text-[2.2rem] leading-[1.04] text-white sm:text-[2.7rem] lg:text-[1.65rem] lg:leading-[1.08]">
+            <h1 className="font-display text-[2.2rem] leading-[1.04] text-white sm:text-[2.7rem] lg:text-[1.65rem] lg:leading-[1.08] hero-headline-reveal">
               Wake up near one of the world&apos;s most beautiful beaches.
             </h1>
           </div>
@@ -164,7 +201,7 @@ export function HomeHero() {
         </div>
       </div>
 
-      <div className="absolute inset-x-3 bottom-3 z-20 hidden sm:inset-x-6 sm:bottom-4 lg:inset-x-10 lg:block xl:inset-x-12">
+      <div className="absolute inset-x-3 bottom-3 z-20 hidden sm:inset-x-6 sm:bottom-4 lg:inset-x-10 lg:block xl:inset-x-12 hero-booking-reveal">
         <div className="relative overflow-hidden rounded-[26px] border border-white/55 bg-[linear-gradient(160deg,rgba(248,249,247,0.97),rgba(239,243,240,0.95))] p-2 shadow-[0_28px_60px_-36px_rgba(0,0,0,0.6)] backdrop-blur-xl">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_0%_0%,rgba(255,255,255,0.76),transparent_58%),radial-gradient(70%_90%_at_100%_0%,rgba(15,118,110,0.14),transparent_60%)]" />
           <div className="relative grid gap-2 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_auto]">

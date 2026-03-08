@@ -98,3 +98,51 @@
     transform: translateY(0);
   }
 }
+
+/* Cinematic staged hero reveal */
+.hero-logo-reveal {
+  opacity: 0;
+  animation: heroStageIn 1200ms cubic-bezier(0.2, 0.84, 0.2, 1) 80ms forwards;
+}
+
+.hero-headline-reveal {
+  opacity: 0;
+  animation: heroStageIn 1400ms cubic-bezier(0.2, 0.84, 0.2, 1) 420ms forwards;
+}
+
+.hero-booking-reveal {
+  opacity: 0;
+  animation: heroStageUp 1350ms cubic-bezier(0.2, 0.84, 0.2, 1) 780ms forwards;
+}
+
+@keyframes heroStageIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroStageUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-reveal,
+  .hero-headline-reveal,
+  .hero-booking-reveal {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
