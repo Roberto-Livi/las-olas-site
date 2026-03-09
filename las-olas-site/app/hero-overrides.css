@@ -102,22 +102,35 @@
 /* Cinematic staged hero reveal */
 .hero-logo-reveal {
   opacity: 0;
-  animation: heroLogoFadeIn 900ms cubic-bezier(0.2, 0.84, 0.2, 1) 1250ms forwards;
 }
 
 .hero-logo-watermark {
-  animation: heroWatermarkResolve 1400ms cubic-bezier(0.2, 0.84, 0.2, 1) 0ms forwards;
+  opacity: 0;
   transform-origin: center;
 }
 
 
 .hero-headline-reveal {
   opacity: 0;
-  animation: heroStageIn 1400ms cubic-bezier(0.2, 0.84, 0.2, 1) 420ms forwards;
 }
 
 .hero-booking-reveal {
   opacity: 0;
+}
+
+.hero-intro-ready .hero-logo-watermark {
+  animation: heroWatermarkResolve 1400ms cubic-bezier(0.2, 0.84, 0.2, 1) 0ms forwards;
+}
+
+.hero-intro-ready .hero-logo-reveal {
+  animation: heroLogoFadeIn 900ms cubic-bezier(0.2, 0.84, 0.2, 1) 1250ms forwards;
+}
+
+.hero-intro-ready .hero-headline-reveal {
+  animation: heroStageIn 1400ms cubic-bezier(0.2, 0.84, 0.2, 1) 420ms forwards;
+}
+
+.hero-intro-ready .hero-booking-reveal {
   animation: heroStageUp 1350ms cubic-bezier(0.2, 0.84, 0.2, 1) 780ms forwards;
 }
 
