@@ -75,7 +75,7 @@ export function HomeHero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-12 lg:pt-9">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-10 lg:pt-9">
         <header className="relative flex min-h-12 items-start justify-center">
           <div className="absolute left-0 top-0 flex items-center">
             <button
@@ -114,17 +114,15 @@ export function HomeHero() {
           </div>
         </header>
 
-        <div className="mt-auto pb-8 sm:pb-10 lg:pb-0 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+        <div className="flex-1 pt-10 sm:pt-14 lg:flex lg:flex-col lg:justify-end lg:pt-16">
           <div className="w-full max-w-none space-y-6 lg:max-w-[980px]">
             <h1 className="hero-headline-reveal font-display text-[2.2rem] leading-[1.04] text-white sm:text-[2.7rem] lg:text-[1.65rem] lg:leading-[1.08]">
               Wake up near one of the world&apos;s most beautiful beaches.
             </h1>
           </div>
-
-          <div className="hidden lg:block" />
         </div>
 
-        <HeroBookingBar className="relative z-20 mt-10 hidden lg:block xl:mx-2" />
+        <HeroBookingBar className="relative z-20 mt-8 hidden lg:block xl:mx-2" />
       </div>
 
       <DrawerMenu open={menuOpen} onClose={() => setMenuOpen(false)} onBookNow={() => setBookingOpen(true)} />
