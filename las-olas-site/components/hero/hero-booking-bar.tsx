@@ -1,9 +1,15 @@
 import { Search } from "lucide-react";
 import { bookingFields } from "@/components/hero/home-hero.constants";
 
-export function HeroBookingBar() {
+type HeroBookingBarProps = {
+  className?: string;
+};
+
+const cn = (...classes: Array<string | undefined>) => classes.filter(Boolean).join(" ");
+
+export function HeroBookingBar({ className }: HeroBookingBarProps) {
   return (
-    <div className="absolute inset-x-3 bottom-3 z-20 hidden sm:inset-x-6 sm:bottom-4 lg:inset-x-10 lg:block xl:inset-x-12 hero-booking-reveal">
+    <div className={cn("hero-booking-reveal", className)}>
       <div className="relative overflow-hidden rounded-[26px] border border-white/55 bg-[linear-gradient(160deg,rgba(248,249,247,0.97),rgba(239,243,240,0.95))] p-2 shadow-[0_28px_60px_-36px_rgba(0,0,0,0.6)] backdrop-blur-xl">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_0%_0%,rgba(255,255,255,0.76),transparent_58%),radial-gradient(70%_90%_at_100%_0%,rgba(15,118,110,0.14),transparent_60%)]" />
         <div className="relative grid gap-2 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_auto]">

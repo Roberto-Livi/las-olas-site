@@ -75,7 +75,7 @@ export function HomeHero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-32 lg:pt-9">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1600px] flex-col px-5 pb-12 pt-7 sm:px-8 sm:pb-16 lg:px-12 lg:pb-12 lg:pt-9">
         <header className="relative flex min-h-12 items-start justify-center">
           <div className="absolute left-0 top-0 flex items-center">
             <button
@@ -123,9 +123,9 @@ export function HomeHero() {
 
           <div className="hidden lg:block" />
         </div>
-      </div>
 
-      <HeroBookingBar />
+        <HeroBookingBar className="relative z-20 mt-10 hidden lg:block xl:mx-2" />
+      </div>
 
       <DrawerMenu open={menuOpen} onClose={() => setMenuOpen(false)} onBookNow={() => setBookingOpen(true)} />
 
